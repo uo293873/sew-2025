@@ -2,7 +2,7 @@
 
 /* Estilos generales del proyecto MotoGP-Desktop*/
 
-/* Selector: body → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 body {
     background-color: #0A1A2F;
     color: #E0E0E0;
@@ -11,26 +11,31 @@ body {
     padding: 0;
 }
 
-/* Selector: header → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 header {
     background-color: #111111;
     padding: 1em;
     text-align: center;
 }
 
-/* Selector: h1 → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 h1 {
     margin: 0;
     font-size: 2em;
 }
 
-/* Selector: h1 a → especificidad (0,0,2) */
+/* especificidad (0,0,2) */
 h1 a {
     color: #FF6600;
     text-decoration: none;
 }
 
-/* Selector: nav a → especificidad (0,0,2) */
+body p a{
+    color: #FF6600;
+    text-decoration: none;
+}
+
+/* especificidad (0,0,2) */
 nav a {
     color: #FFFFFF;
     margin: 0 0.5em;
@@ -38,22 +43,22 @@ nav a {
     font-weight: bold;
 }
 
-/* Selector: nav a:hover → especificidad (0,1,2) */
+/* especificidad (0,1,2) */
 nav a:hover {
     color: #FF6600;
 }
 
-/* Selector: p → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 p {
     line-height: 1.6;
 }
 
-/* Selector: main → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 main {
     padding: 1.5em;
 }
 
-/* Selector: section → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 section {
     background-color: #111111;
     padding: 1em;
@@ -61,12 +66,12 @@ section {
     border-radius: 8px;
 }
 
-/* Selector: section h2 → especificidad (0,0,2) */
+/* especificidad (0,0,2) */
 section h2 {
     color: #FF6600;
 }
 
-/* Selector: aside → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 aside {
     background-color: #1B2735;
     padding: 1em;
@@ -75,29 +80,153 @@ aside {
     border-radius: 8px;
 }
 
-/* Selector: table → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1em;
     background-color: #1B2735;
     color: #FFFFFF;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
+    font-size: 1rem;
 }
 
-/* Selector: th, td → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 th, td {
     border: 1px solid #444;
     padding: 0.5em;
     text-align: center;
+    min-width: 80px;
 }
 
-/* Selector: th → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
 th {
     background-color: #FF6600;
     color: #000000;
 }
 
-/* Selector: footer → especificidad (0,0,1) */
+/* especificidad (0,0,1) */
+video {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+/* especificidad (0,0,1) */
+img, picture {
+    max-width: 100%;
+    height: auto;
+}
+
+/* especificidad (0,0,1) */
+audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Media Queries para responsividad */
+@media screen and (max-width: 799px) {
+    /* especificidad (0,0,1) */
+    body {
+        font-size: 0.9rem;
+    }
+    
+    /* especificidad (0,0,1) */
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    /* especificidad (0,0,1) */
+    h2 {
+        font-size: 1.3em;
+    }
+    
+    /* especificidad (0,0,1) */
+    main {
+        padding: 1em;
+    }
+    
+    /* especificidad (0,0,1) */
+    section, aside {
+        padding: 0.8em;
+        margin: 0.8em 0;
+    }
+    
+    /* especificidad (0,0,1) */
+    table {
+        font-size: 0.8rem;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    /* especificidad (0,0,1) */
+    th, td {
+        padding: 0.3em;
+        min-width: 60px;
+    }
+    
+    /* especificidad (0,0,2) */
+    nav a {
+        margin: 0 0.3em;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 465px) {
+    /* especificidad (0,0,1) */
+    body {
+        font-size: 0.8rem;
+    }
+    
+    /* especificidad (0,0,1) */
+    h1 {
+        font-size: 1.3em;
+    }
+    
+    /* especificidad (0,0,1) */
+    h2 {
+        font-size: 1.1em;
+    }
+    
+    /* especificidad (0,0,1) */
+    main {
+        padding: 0.8em;
+    }
+    
+    /* especificidad (0,0,1) */
+    section, aside {
+        padding: 0.6em;
+        margin: 0.6em 0;
+    }
+    
+    /* especificidad (0,0,1) */
+    table {
+        font-size: 0.7rem;
+    }
+    
+    /* especificidad (0,0,1) */
+    th, td {
+        padding: 0.2em;
+        min-width: 50px;
+    }
+    
+    /* especificidad (0,0,2) */
+    nav a {
+        display: block;
+        margin: 0.2em 0;
+        font-size: 0.8em;
+    }
+    
+    /* especificidad (0,0,1) */
+    header {
+        padding: 0.8em;
+    }
+}
+
+/* especificidad (0,0,1) */
 footer {
     background-color: #111111;
     text-align: center;
@@ -105,14 +234,14 @@ footer {
     margin-top: 2em;
 }
 
-/* Selector: footer a → especificidad (0,0,2) */
+/* especificidad (0,0,2) */
 footer a {
     color: #FF6600;
     text-decoration: none;
     margin: 0 0.5em;
 }
 
-/* Selector: footer a:hover → especificidad (0,1,2) */
+/* especificidad (0,1,2) */
 footer a:hover {
     text-decoration: underline;
 }
