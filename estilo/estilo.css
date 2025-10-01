@@ -2,3 +2,118 @@
 
 /* Estilos generales del proyecto MotoGP-Desktop*/
 
+/* Selector: body → especificidad (0,0,1) */
+body {
+    background-color: #0A1A2F;
+    color: #E0E0E0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Selector: header → especificidad (0,0,1) */
+header {
+    background-color: #111111;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Selector: h1 → especificidad (0,0,1) */
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Selector: h1 a → especificidad (0,0,2) */
+h1 a {
+    color: #FF6600;
+    text-decoration: none;
+}
+
+/* Selector: nav a → especificidad (0,0,2) */
+nav a {
+    color: #FFFFFF;
+    margin: 0 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Selector: nav a:hover → especificidad (0,1,2) */
+nav a:hover {
+    color: #FF6600;
+}
+
+/* Selector: p → especificidad (0,0,1) */
+p {
+    line-height: 1.6;
+}
+
+/* Selector: main → especificidad (0,0,1) */
+main {
+    padding: 1.5em;
+}
+
+/* Selector: section → especificidad (0,0,1) */
+section {
+    background-color: #111111;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 8px;
+}
+
+/* Selector: section h2 → especificidad (0,0,2) */
+section h2 {
+    color: #FF6600;
+}
+
+/* Selector: aside → especificidad (0,0,1) */
+aside {
+    background-color: #1B2735;
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid #FF6600;
+    border-radius: 8px;
+}
+
+/* Selector: table → especificidad (0,0,1) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    background-color: #1B2735;
+    color: #FFFFFF;
+}
+
+/* Selector: th, td → especificidad (0,0,1) */
+th, td {
+    border: 1px solid #444;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* Selector: th → especificidad (0,0,1) */
+th {
+    background-color: #FF6600;
+    color: #000000;
+}
+
+/* Selector: footer → especificidad (0,0,1) */
+footer {
+    background-color: #111111;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+/* Selector: footer a → especificidad (0,0,2) */
+footer a {
+    color: #FF6600;
+    text-decoration: none;
+    margin: 0 0.5em;
+}
+
+/* Selector: footer a:hover → especificidad (0,1,2) */
+footer a:hover {
+    text-decoration: underline;
+}
+
