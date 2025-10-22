@@ -1,0 +1,28 @@
+# Archivos ejecutables de Java
+*.exe
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# Archivos del IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Archivos de backup
+*.bak
+*.backup
+*~
