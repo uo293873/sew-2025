@@ -9,6 +9,7 @@
     <title>MotoGP-Piloto</title>
     <link rel="icon" type="image/x-icon" href="multimedia/icono.png" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
 </head>
 
 <body>
@@ -16,7 +17,7 @@
     <h1><a href="index.html" title="Ir a la página principal">MotoGP Desktop</a></h1>
         <nav>
             <a href="index.html" title="Página de inicio">Inicio</a>
-            <a href="piloto.html" title="Información del piloto">Piloto</a>
+            <a href="piloto.html" title="Información del piloto" class="active">Piloto</a>
             <a href="circuito.html" title="Información del circuito">Circuito</a>
             <a href="meteorologia.html" title="Información sobre meteorología">Meteorología</a>
             <a href="clasificaciones.html" title="Clasificaciones de MotoGP">Clasificaciones</a>
@@ -25,7 +26,7 @@
         </nav>
     </header>
 
-    <p>Estás en: <a href="index.html">Inicio</a> &gt; Piloto</p>
+    <p>Estás en: <a href="index.html">Inicio</a> &gt; <strong>Piloto</strong></p>
 
     <main>
         <section>
@@ -45,7 +46,7 @@
             </picture>
         </section>
 
-        <aside>
+        <section>
             <h2>Datos del piloto</h2>
             <ul>
                 <li>Fecha de nacimiento: 12 de enero de 1995</li>
@@ -59,7 +60,7 @@
                 <source src="multimedia/maverick_video.mp4" type="video/mp4">
                 <source src="multimedia/maverick_video.webm" type="video/webm">
             </video>
-        </aside>
+        </section>
 
         <section>
             <h2>Trayectoria profesional</h2>
@@ -94,6 +95,33 @@
         </section>
 
         <section>
+            <h2>Resultados recientes</h2>
+            <table>
+                <caption>Resultados de Maverick Viñales en la temporada 2024</caption>
+                <tr>
+                    <th scope="row">Puntos obtenidos</th>
+                    <td>190</td>
+                </tr>
+                <tr>
+                    <th scope="row">Posición final</th>
+                    <td>7º</td>
+                </tr>
+                <tr>
+                    <th scope="row">Poles</th>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row">Victorias</th>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <th scope="row">Podios</th>
+                    <td>1</td>
+                </tr>
+            </table>
+        </section>
+
+        <aside>
             <h2>Glosario</h2>
             <dl>
                 <dt>Chicane</dt>
@@ -107,28 +135,7 @@
                 <dt>Setup</dt>
                     <dd>Conjunto de ajustes realizados en la moto para adaptarla a las condiciones del circuito y preferencias del piloto.</dd>
             </dl>
-        </section>
-
-        <section>
-            <h2>Resultados recientes</h2>
-            <table>
-                <caption>Resultados de Maverick Viñales en la temporada 2024</caption>
-                <tr>
-                    <th id="puntos" scope="col">Puntos obtenidos</th>
-                    <th id="posicion" scope="col">Posición final</th>
-                    <th id="poles" scope="col">Poles</th>
-                    <th id="victorias" scope="col">Victorias</th>
-                    <th id="podios" scope="col">Podios</th>
-                </tr>
-                <tr>
-                    <td headers="puntos">190</td>
-                    <td headers="posicion">7º</td>
-                    <td headers="poles">1</td>
-                    <td headers="victorias">1</td>
-                    <td headers="podios">1</td>
-                </tr>
-            </table>
-        </section>
+        </aside>
     </main>
 
     <footer>
