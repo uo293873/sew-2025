@@ -1,18 +1,16 @@
-# 02020-KML.py
-# # -*- coding: utf-8 -*-
+
 """"
 Crea archivos KML con puntos y líneas
-@version 1.1 19/Octubre/2024
-@author: Juan Manuel Cueva Lovelle. Universidad de Oviedo
+autor: Alejandro Aldea Viana - UO293873
 """
 
 import xml.etree.ElementTree as ET
 
 class Kml(object):
     """
-    Genera archivo KML con puntos y líneas
-    @version 1.1 19/Octumbre/2024
-    @author: Juan Manuel Cueva Lovelle. Universidad de Oviedo
+    Genera archivo KML con el circuito de Sepang uniendo lineas y puntos
+    @version 1.0 22/Octumbre/2025
+    @author: Alejandro Aldea Viana - UO293873
     """
     def __init__(self):
         """
@@ -60,55 +58,65 @@ class Kml(object):
         ET.indent(arbol)
         arbol.write(nombreArchivoKML, encoding='utf-8', xml_declaration=True)
 
-    def ver(self):
-        """
-        Muestra el archivo KML. Se utiliza para depurar
-        """
-        print("\nElemento raiz = ", self.raiz.tag)
-        if self.raiz.text != None:
-        print("Contenido = " , self.raiz.text.strip('\n')) #strip() elimina los '\n' del string
-        else:
-        print("Contenido = " , self.raiz.text)
-        print("Atributos = " , self.raiz.attrib)
-        # Recorrido de los elementos del árbol
-        for hijo in self.raiz.findall('.//'): # Expresión XPath
-        print("\nElemento = " , hijo.tag)
-        if hijo.text != None:
-        print("Contenido = ", hijo.text.strip('\n')) #strip() elimina los '\n' del string
-        else:
-        print("Contenido = ", hijo.text)
-        print("Atributos = ", hijo.attrib)
-
-    def main():
-        print(Kml.__doc__)
-        """Prueba unitaria de la clase Kml"""
-        """ nombreKML = input('Introduzca el nombre del archivo KML = ') """
-        nombreKML = "rutaOviedo.kml"
+def main():
+    print(Kml.__doc__)
+    
+    # Nombre del archivo de entrada y salida
+    archivoXML = "circuitoEsquema.xml"
+    nombreKML = "circuito.kml"
+    
+    try:
+        arbol = ET.parse(archivoXML)
+        raiz = arbol.getroot()
+        namespace = {'c': 'http://www.uniovi.es'}
         nuevoKML = Kml()
-        nuevoKML.addPlacemark('Escuela Ingeniería Informática',
-        'Universidad de Oviedo',
-        -5.8513, 43.3550, 0.0 ,
-        'relativeToGround')
-        nuevoKML.addPlacemark('Estadio Universitario',
-        'Universidad de Oviedo',
-        -5.853069841342697, 43.35487460099027, 0.0 ,
-        'relativeToGround')
-        nuevoKML.addPlacemark('Polideportivo Universitario',
-        'Universidad de Oviedo',
-        -5.85260611648946,43.35423714086568, 0.0 ,
-        'relativeToGround')
-        coordenadasPaseo = ("-5.8513,43.3550,0.0\n" +
-        "-5.853069841342697,43.35487460099027,0.0\n" +
-        "-5.85260611648946,43.35423714086568,0.0\n" +
-        "-5.8513,43.3550,0.0")
-        nuevoKML.addLineString("Ruta Oviedo","1","1",
-        coordenadasPaseo,'relativeToGround',
-        '#ff0000ff',"5")
-        """Visualización del KML creado"""
-        nuevoKML.ver()
-        """Creación del archivo en formato KML"""
+        
+        # //nombre - descendientes 'nombre' de la raíz
+        nombre_circuito = raiz.find('.//c:nombre', namespace).text
+        # //localidad - descendientes 'localidad' de la raíz  
+        localidad = raiz.find('.//c:localidad', namespace).text
+        # //pais - descendientes 'pais' de la raíz
+        pais = raiz.find('.//c:pais', namespace).text
+        
+        # //coordenadasOrigen/longitudGeo - descendientes 'longitudGeo' hijos de 'coordenadasOrigen'
+        longitud_origen = float(raiz.find('.//c:coordenadasOrigen/c:longitudGeo', namespace).text)
+        latitud_origen = float(raiz.find('.//c:coordenadasOrigen/c:latitudGeo', namespace).text)
+        
+        # Añadir el punto de la meta
+        nuevoKML.addPlacemark('Línea de Meta',
+                            f'{nombre_circuito} - {localidad}, {pais}',
+                            longitud_origen, latitud_origen, 0,
+                            'clampToGround')
+        
+        # //tramo/coordenadas/longitudGeo - descendientes 'longitudGeo' de 'coordenadas' que son hijos de 'tramo'
+        coordenadas_longitud = raiz.findall('.//c:tramo/c:coordenadas/c:longitudGeo', namespace)
+        coordenadas_latitud = raiz.findall('.//c:tramo/c:coordenadas/c:latitudGeo', namespace)
+        
+        # Construir la cadena de coordenadas para la línea del circuito
+        # empezando desde el punto de meta
+        coordenadas_circuito = f"{longitud_origen},{latitud_origen}\n"
+        
+        for i in range(len(coordenadas_longitud)):
+            longitud = float(coordenadas_longitud[i].text)
+            latitud = float(coordenadas_latitud[i].text)
+            coordenadas_circuito += f"{longitud},{latitud}\n"
+        
+        coordenadas_circuito += f"{longitud_origen},{latitud_origen}"
+        
+        # Añadir la línea del circuito
+        nuevoKML.addLineString(f"Trazado {nombre_circuito}", "1", "1",
+                             coordenadas_circuito, 'relativeToGround',
+                             "#ff0000ff", "3")
+        
+        # Escribir el archivo KML
         nuevoKML.escribir(nombreKML)
-        print("Creado el archivo: ", nombreKML)
+        
+    except FileNotFoundError:
+        print(f"Error: No se encontró el archivo {archivoXML}")
+    except ET.ParseError as e:
+        print(f"Error al parsear el archivo XML: {e}")
+    except Exception as e:
+        print(f"Error inesperado: {e}")
 
-    if __name__ == "__main__":
-        main() 
+if __name__ == "__main__":
+    main() 

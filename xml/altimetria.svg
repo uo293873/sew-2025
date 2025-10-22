@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" version="2.0" width="1000" height="600" viewBox="0 0 1000 600">
+  <rect x="0" y="0" width="1000" height="600" fill="#0A1A2F" stroke-width="0" stroke="none" />
+  <text x="500" y="30" font-family="Trebuchet MS" font-size="18" style="text-anchor: middle; font-weight: bold; fill: #FF6600">Perfil Altimétrico - Petronas Sepang International Circuit</text>
+  <text x="500" y="50" font-family="Trebuchet MS" font-size="14" style="text-anchor: middle; fill: #E0E0E0">Sepang</text>
+  <polyline points="80.0,249.1 164.8,210.3 168.8,215.6 172.4,218.2 177.2,226.1 186.1,256.0 189.3,265.5 193.3,285.1 201.3,345.1 210.7,419.8 223.8,501.0 233.5,519.8 241.6,520.0 268.1,235.2 298.0,237.2 301.2,222.6 334.4,168.5 341.3,211.3 352.1,242.2 360.6,239.4 372.3,212.3 381.5,194.5 391.2,195.8 433.7,191.9 448.9,208.3 514.5,288.3 517.1,276.0 530.3,176.2 536.0,144.6 546.5,101.8 561.1,80.0 567.4,87.7 607.5,231.7 613.9,258.6 631.1,315.6 644.0,309.5 655.4,263.0 659.1,244.2 663.4,238.2 781.4,235.6 784.7,222.4 787.1,213.9 790.4,215.2 920.0,226.1 920,520 80,520" stroke="#FF6600" stroke-width="3" fill="rgba(255, 102, 0, 0.15)" />
+  <line x1="80" y1="520" x2="920" y2="520" stroke="#E0E0E0" stroke-width="2" />
+  <line x1="80" y1="80" x2="80" y2="520" stroke="#E0E0E0" stroke-width="2" />
+  <text x="80.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">0m</text>
+  <line x1="80.0" y1="520" x2="80.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="248.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">1223m</text>
+  <line x1="248.0" y1="520" x2="248.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="416.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">2445m</text>
+  <line x1="416.0" y1="520" x2="416.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="584.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">3668m</text>
+  <line x1="584.0" y1="520" x2="584.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="752.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">4891m</text>
+  <line x1="752.0" y1="520" x2="752.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="920.0" y="535" font-family="Trebuchet MS" font-size="12" style="text-anchor: middle; fill: #CCCCCC">6113m</text>
+  <line x1="920.0" y1="520" x2="920.0" y2="525" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="525.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">22.6m</text>
+  <line x1="75" y1="520.0" x2="80" y2="520.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="437.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">26.9m</text>
+  <line x1="75" y1="432.0" x2="80" y2="432.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="349.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">31.3m</text>
+  <line x1="75" y1="344.0" x2="80" y2="344.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="261.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">35.6m</text>
+  <line x1="75" y1="256.0" x2="80" y2="256.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="173.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">40.0m</text>
+  <line x1="75" y1="168.0" x2="80" y2="168.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="70" y="85.0" font-family="Trebuchet MS" font-size="12" style="text-anchor: end; fill: #CCCCCC">44.4m</text>
+  <line x1="75" y1="80.0" x2="80" y2="80.0" stroke="#E0E0E0" stroke-width="1" />
+  <text x="500" y="580" font-family="Trebuchet MS" font-size="14" style="text-anchor: middle; font-weight: bold; fill: #E0E0E0">Distancia (m)</text>
+  <text x="20" y="300" font-family="Trebuchet MS" font-size="14" style="text-anchor: middle; font-weight: bold; writing-mode: tb; glyph-orientation-vertical: 0; fill: #E0E0E0">Altitud (m)</text>
+</svg>

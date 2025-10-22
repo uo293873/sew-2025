@@ -339,6 +339,32 @@ footer a:focus {
     background-color: rgba(255, 102, 0, 0.1);
 }
 
+/* === ESTILOS PARA ENLACES EN LISTAS === */
+
+/* especificidad (0,0,3) */
+ul li a {
+    color: #FF6600;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 0.0625em dotted rgba(255, 102, 0, 0.5);
+}
+
+/* especificidad (0,1,3) */
+ul li a:hover {
+    color: #FFFFFF;
+    background-color: rgba(255, 102, 0, 0.2);
+    border-bottom: 0.125em solid #FF6600;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+}
+
+/* especificidad (0,1,3) */
+ul li a:active {
+    color: #000000;
+    background-color: #FF6600;
+    border-bottom-color: #FF6600;
+}
+
 /* especificidad (0,0,2) */
 ul li {
     margin: 0.5rem 0;
