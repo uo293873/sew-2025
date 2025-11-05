@@ -434,22 +434,22 @@
     </tramos>
     
     <vencedor>
-        <nombrePiloto></nombrePiloto>
-        <tiempoCarrera></tiempoCarrera>
+        <nombrePiloto>Alex Marquez</nombrePiloto>
+        <tiempoCarrera>40:09.249</tiempoCarrera>
     </vencedor>
     
     <clasificacionMundial>
         <pilotoClasificado posicion="1">
-            <nombrePilotoClasificado></nombrePilotoClasificado>
-            <puntosPiloto></puntosPiloto>
+            <nombrePilotoClasificado>Mark Marquez</nombrePilotoClasificado>
+            <puntosPiloto>545</puntosPiloto>
         </pilotoClasificado>
         <pilotoClasificado posicion="2">
-            <nombrePilotoClasificado></nombrePilotoClasificado>
-            <puntosPiloto></puntosPiloto>
+            <nombrePilotoClasificado>Alex Marquez</nombrePilotoClasificado>
+            <puntosPiloto>413</puntosPiloto>
         </pilotoClasificado>
         <pilotoClasificado posicion="3">
-            <nombrePilotoClasificado></nombrePilotoClasificado>
-            <puntosPiloto></puntosPiloto>
+            <nombrePilotoClasificado>Marco Bezzecchi</nombrePilotoClasificado>
+            <puntosPiloto>291</puntosPiloto>
         </pilotoClasificado>
     </clasificacionMundial>
 </circuito>

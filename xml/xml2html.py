@@ -224,7 +224,12 @@ def main():
         # Información del vencedor
         vencedor = raiz.find('.//c:vencedor', namespace)
         nombre_vencedor = vencedor.find('c:nombrePiloto', namespace).text
-        tiempo_carrera = vencedor.find('c:tiempoCarrera', namespace).text
+        tiempo_iso = vencedor.find('c:tiempoCarrera', namespace).text
+        # Convertir PT40M9.249S a 40:09.249
+        tiempo_carrera = tiempo_iso.replace('PT', '').replace('M', ':').replace('S', '')
+        if ':' in tiempo_carrera and len(tiempo_carrera.split(':')[1].split('.')[0]) == 1:
+            partes = tiempo_carrera.split(':')
+            tiempo_carrera = partes[0] + ':0' + partes[1]
         
         # Clasificación mundial
         clasificados = raiz.findall('.//c:clasificacionMundial/c:pilotoClasificado', namespace)

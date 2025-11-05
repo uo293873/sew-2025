@@ -435,22 +435,22 @@ xmlns="http://www.uniovi.es">
     </tramos>
     
     <vencedor>
-        <nombrePiloto>NO DETERMINADO</nombrePiloto>
-        <tiempoCarrera>PT0S</tiempoCarrera>
+        <nombrePiloto>Alex Marquez</nombrePiloto>
+        <tiempoCarrera>PT40M9.249S</tiempoCarrera>
     </vencedor>
     
     <clasificacionMundial>
         <pilotoClasificado posicion="1">
-            <nombrePilotoClasificado>NO DETERMINADO</nombrePilotoClasificado>
-            <puntosPiloto>0</puntosPiloto>
+            <nombrePilotoClasificado>Mark Marquez</nombrePilotoClasificado>
+            <puntosPiloto>545</puntosPiloto>
         </pilotoClasificado>
         <pilotoClasificado posicion="2">
-            <nombrePilotoClasificado>NO DETERMINADO</nombrePilotoClasificado>
-            <puntosPiloto>0</puntosPiloto>
+            <nombrePilotoClasificado>Alex Marquez</nombrePilotoClasificado>
+            <puntosPiloto>413</puntosPiloto>
         </pilotoClasificado>
         <pilotoClasificado posicion="3">
-            <nombrePilotoClasificado>NO DETERMINADO</nombrePilotoClasificado>
-            <puntosPiloto>0</puntosPiloto>
+            <nombrePilotoClasificado>Marco Bezzecchi</nombrePilotoClasificado>
+            <puntosPiloto>291</puntosPiloto>
         </pilotoClasificado>
     </clasificacionMundial>
 </circuito>
