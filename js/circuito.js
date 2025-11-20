@@ -43,18 +43,9 @@ class Circuito {
         const parser = new DOMParser();
         const documentoHTML = parser.parseFromString(contenidoHTML, 'text/html');
         const mainActual = document.querySelector('main');
-        
-        // Buscar la sección del selector HTML por primera sección
         const seccionHTML = mainActual.querySelector('section:first-of-type');
-        
         const secciones = documentoHTML.querySelectorAll('main > section');
-        
-        // Crear una sección contenedora para todas las secciones del HTML
         const seccionContenedora = document.createElement('section');
-        
-        // Agregar un comentario al inicio como marcador
-        const comentario = document.createComment('info-circuito');
-        seccionContenedora.appendChild(comentario);
         
         secciones.forEach(seccion => {
             seccionContenedora.appendChild(seccion);
@@ -108,13 +99,13 @@ class CargadorSVG {
         
         section.appendChild(svg);
         
-        const seccionSVG = document.querySelector('main > section:nth-of-type(2)');
+        const main = document.querySelector('main');
+        const seccionSVG = main.querySelector('section:nth-of-type(2)');
+        
         if (seccionSVG) {
+            main.insertBefore(section, seccionSVG);
             seccionSVG.remove();
         }
-        
-        const main = document.querySelector('main');
-        main.insertBefore(section, main.querySelector('section:nth-of-type(2)'));
     }
 }
 
