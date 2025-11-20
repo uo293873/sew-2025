@@ -64,6 +64,16 @@ class Svg(object):
                      stroke=stroke,
                      **{'stroke-width': str(strokeWidth)},
                      fill=fill)
+    
+    def addPolygon(self,points,stroke,strokeWidth,fill):
+        """
+        Añade un elemento polygon
+        """
+        ET.SubElement(self.raiz,'polygon',
+                     points=points,
+                     stroke=stroke,
+                     **{'stroke-width': str(strokeWidth)},
+                     fill=fill)
 
     def addText(self,texto,x,y,fontFamily,fontSize,style):
         """
@@ -180,14 +190,22 @@ def main():
             y = alto_svg - margen - ((lista_altitudes[i] - min_altitud) / rango_altitud) * alto_grafico
             puntos_perfil.append(f"{x:.1f},{y:.1f}")
         
-        # Cerrar la polilínea para crear efecto suelo
-        puntos_perfil.append(f"{ancho_svg - margen},{alto_svg - margen}")  # Esquina inferior derecha
-        puntos_perfil.append(f"{margen},{alto_svg - margen}")  # Esquina inferior izquierda
+        # Crear puntos para el área sombreada (polígono cerrado)
+        puntos_area = puntos_perfil.copy()
+        # Añadir esquina inferior derecha
+        ultimo_x = margen + (distancia_acumulada[-1] / max_distancia) * ancho_grafico
+        puntos_area.append(f"{ultimo_x},{alto_svg - margen}")
+        # Añadir esquina inferior izquierda
+        puntos_area.append(f"{margen},{alto_svg - margen}")
         
-        puntos_str = " ".join(puntos_perfil)
+        puntos_area_str = " ".join(puntos_area)
+        puntos_linea_str = " ".join(puntos_perfil)
         
-        # Añadir la polilínea del perfil altimétrico
-        nuevoSVG.addPolyline(puntos_str, "#FF6600", "3", "rgba(255, 102, 0, 0.15)")
+        # Añadir el polígono del área sombreada
+        nuevoSVG.addPolygon(puntos_area_str, "none", "0", "rgba(255, 102, 0, 0.15)")
+        
+        # Añadir la polilínea del perfil altimétrico (solo la línea superior)
+        nuevoSVG.addPolyline(puntos_linea_str, "#FF6600", "3", "none")
         
         # Añadir ejes
         # Eje horizontal (distancias)

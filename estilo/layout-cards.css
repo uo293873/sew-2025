@@ -39,7 +39,7 @@ main h2, main p {
     }
     
     /* especificidad: 002 */
-    main h2 {
+    main h2, main p {
         grid-column: 1 / 3;
         padding: 0.3em 0;
     }

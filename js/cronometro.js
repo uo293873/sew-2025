@@ -1,25 +1,41 @@
 class Cronometro {
+    #tiempo;
+    #inicio;
+    #corriendo;
+
     constructor() {
-        this.tiempo = 0;
+        this.#tiempo = 0;
+
+        this.#registrarEventos();
+    }
+
+    #registrarEventos(){
+        const numberOfButtons = document.querySelectorAll('main button').length;
+        if (numberOfButtons !== 0) {
+            const botones = document.querySelectorAll('main button');
+            botones[0].addEventListener('click', this.arrancar.bind(this));
+            botones[1].addEventListener('click', this.parar.bind(this));
+            botones[2].addEventListener('click', this.#reiniciar.bind(this));
+        }
     }
 
     arrancar() {
-        if (this.corriendo) {
+        if (this.#corriendo) {
             return;
         }
 
         try {
             // Intenta usar Temporal
-            this.inicio = Temporal.Now.instant();
+            this.#inicio = Temporal.Now.instant();
         } catch (error) {
             // Si Temporal da error usa Date
-            this.inicio = new Date();
+            this.#inicio = new Date();
         }
 
-        this.corriendo = setInterval(this.actualizar.bind(this), 100);
+        this.#corriendo = setInterval(this.#actualizar.bind(this), 100);
     }
 
-    actualizar() {
+    #actualizar() {
         let ahora;
         try {
             ahora = Temporal.Now.instant().epochMilliseconds;
@@ -27,16 +43,16 @@ class Cronometro {
             ahora = new Date().getTime();
         }
         
-        const inicio = this.inicio.epochMilliseconds || this.inicio.getTime();
-        this.tiempo = ahora - inicio;
+        const inicio = this.#inicio.epochMilliseconds || this.#inicio.getTime();
+        this.#tiempo = ahora - inicio;
 
-        this.mostrar();
+        this.#mostrar();
     }
 
-    mostrar() {
-        const minutos = parseInt(this.tiempo / 60000);
-        const segundos = parseInt((this.tiempo % 60000) / 1000);
-        const decimas = parseInt((this.tiempo % 1000) / 100);
+    #mostrar() {
+        const minutos = parseInt(this.#tiempo / 60000);
+        const segundos = parseInt((this.#tiempo % 60000) / 1000);
+        const decimas = parseInt((this.#tiempo % 1000) / 100);
 
         // Formatea con ceros a la izquierda usando padStart
         const minutosStr = minutos.toString().padStart(2, '0');
@@ -50,14 +66,14 @@ class Cronometro {
     }
 
     parar() {
-        clearInterval(this.corriendo);
-        this.corriendo = null;
+        clearInterval(this.#corriendo);
+        this.#corriendo = null;
     }
 
-    reiniciar() {
-        clearInterval(this.corriendo);
-        this.corriendo = null;
-        this.tiempo = 0;
-        this.mostrar();
+    #reiniciar() {
+        clearInterval(this.#corriendo);
+        this.#corriendo = null;
+        this.#tiempo = 0;
+        this.#mostrar();
     }
 }

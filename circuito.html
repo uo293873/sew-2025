@@ -12,6 +12,8 @@
     <link rel="icon" type="image/x-icon" href="multimedia/icono.png" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <script src="js/circuito.js"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtQoBaDIn4GkuzGB2WnVXBN6MF2B-osB8&loading=async&callback=initMap&libraries=marker"></script>
 </head>
 
 <body>
@@ -33,8 +35,28 @@
     <main>
         <section>
             <h2>Información del circuito</h2>
-            <p>En desarrollo. </p>
+            <p>Seleccione el archivo InfoCircuito.html para cargar la información del circuito:</p>
+            <input type="file" accept=".html" />
+        </section>
+        <section>
+            <h2>Perfil de Altimetría</h2>
+            <p>Seleccione el archivo altimetria.svg para cargar el perfil de altimetría del circuito:</p>
+            <input type="file" accept=".svg" />
+        </section>
+        <section>
+            <h2>Mapa del Circuito</h2>
+            <p>Seleccione el archivo circuito.kml para visualizar el trazado del circuito en el mapa:</p>
+            <input type="file" accept=".kml" />
         </section>
     </main>
+
+    <script>
+        function initMap() {
+            window.googleMapsLoaded = true;
+        }
+        const circuito = new Circuito();
+        const cargadorSVG = new CargadorSVG();
+        const cargadorKML = new CargadorKML();
+    </script>
 </body>
 </html>

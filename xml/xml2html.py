@@ -144,11 +144,11 @@ class Html(object):
         """
         if caption:
             return f'''    <figure>
-        <img src="../{src}" alt="{alt}" style="max-width: 100%; height: auto;">
+        <img src="{src}" alt="{alt}" />
         <figcaption>{caption}</figcaption>
     </figure>'''
         else:
-            return f'    <img src="../{src}" alt="{alt}" style="max-width: 100%; height: auto;">'
+            return f'    <img src="{src}" alt="{alt}" />'
     
     def addVideo(self, src, caption=None):
         """
@@ -157,14 +157,14 @@ class Html(object):
         if caption:
             return f'''    <figure>
         <video controls>
-            <source src="../{src}" type="video/mp4">
+            <source src="{src}" type="video/mp4">
             Tu navegador no soporta el elemento video.
         </video>
         <figcaption>{caption}</figcaption>
     </figure>'''
         else:
             return f'''    <video controls>
-        <source src="../{src}" type="video/mp4">
+        <source src="{src}" type="video/mp4">
         Tu navegador no soporta el elemento video.
     </video>'''
 

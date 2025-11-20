@@ -1,17 +1,180 @@
 /* Alejandro Aldea Viana - UO293873 */
 
-/* especificidad (0,0,1) */
+/* === RESET Y BASE === */
+/* especificidad: 001 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* === ENCABEZADOS === */
+/* especificidad: 001 */
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+/* especificidad: 001 */
+h1 {
+    margin-bottom: 1rem;
+}
+
+/* especificidad: 001 */
+h2 {
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+}
+
+/* especificidad: 001 */
+h3 {
+    margin: 1.2rem 0 0.8rem;
+}
+
+/* especificidad: 001 */
+h4 {
+    margin: 1rem 0 0.7rem;
+}
+
+/* === TEXTO === */
+/* especificidad: 001 */
+p {
+    margin: 0 0 1rem;
+    text-align: justify;
+}
+
+/* === LISTAS === */
+/* especificidad: 001 */
+ul, ol, dl {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+/* especificidad: 002 */
+ul li, ol li {
+    margin: 0.5rem 0;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+/* especificidad: 002 */
+ul li {
+    list-style-position: inside;
+}
+
+/* especificidad: 002 */
+ol li {
+    list-style-position: outside;
+}
+
+/* especificidad: 003 */
+ul ul li, ol ol li {
+    margin: 0.4rem 0;
+}
+
+/* especificidad: 013 */
+ul li a:hover {
+    padding: 0.2em 0.4em;
+}
+
+/* === LISTAS DE DEFINICIÓN === */
+/* especificidad: 001 */
+dl {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0.5em;
+    border-left: 0.25em solid #FF6600;
+}
+
+/* === MAPA DINÁMICO === */
+/* especificidad: 002 */
+section > div {
+    width: 100%;
+    height: 30em;
+    margin: 1em 0;
+    border: 0.2em solid #FF6600;
+    border-radius: 0.5em;
+}
+
+/* especificidad: 001 */
+dt {
+    margin: 1.5rem 0 0.5rem;
+    padding: 0.5rem;
+    border-radius: 0.25em;
+}
+
+/* especificidad: 011 */
+dt:first-of-type {
+    margin-top: 0;
+}
+
+/* especificidad: 001 */
+dd {
+    margin: 0.5rem 0 1rem 2rem;
+    padding: 0.8rem;
+    border-radius: 0.375em;
+    border-left: 0.1875em solid rgba(255, 102, 0, 0.3);
+}
+
+/* === TABLAS === */
+/* especificidad: 001 */
+table {
+    margin: 1.5rem 0;
+    max-width: 37.5em;
+    border-radius: 0.75em;
+    overflow: hidden;
+}
+
+/* especificidad: 001 */
+caption {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1875em solid #FF6600;
+}
+
+/* especificidad: 001 */
+th {
+    text-align: left;
+    padding: 1.2rem 1rem;
+    border: none;
+    width: 60%;
+}
+
+/* especificidad: 001 */
+td {
+    padding: 1.2rem 1rem;
+    border: none;
+    border-bottom: 0.0625em solid rgba(255, 102, 0, 0.2);
+    width: 40%;
+}
+
+/* especificidad: 011 */
+td:hover {
+    border-radius: 0.375em;
+}
+
+/* especificidad: 003 */
+main section table {
+    margin: 2rem auto;
+}
+
+/* === LAYOUT === */
+/* especificidad: 001 */
 header {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 1em;
-    background-color: #111111;
     padding: 1em;
 }
 
-/* especificidad (0,0,1) */
+/* especificidad: 002 */
+header + p {
+    margin: 0.5em 0;
+    padding: 0 1.5em;
+}
+
+/* especificidad: 001 */
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -20,107 +183,57 @@ nav {
     gap: 0.8em;
 }
 
-/* especificidad (0,0,2) */
+/* especificidad: 002 */
 nav a {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     white-space: nowrap;
+    padding: 0.5em 1em;
 }
 
-/* especificidad (0,0,1) */
-video, audio {
-    width: 100%;
-    height: auto;
+/* especificidad: 001 */
+main {
+    padding: 1.5em;
 }
 
-/* especificidad (0,0,1) */
-audio {
-    height: 2.5em;
-    width: 100%;
-    max-width: 31.25em;
+/* especificidad: 001 */
+section {
+    padding: 1em;
+    margin: 1em 0;
 }
 
-/* Media Queries para adaptabilidad */
-@media screen and (max-width: 49.9375em) {
-    /* especificidad (0,0,1) */
-    header {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1em;
-    }
-    
-    /* especificidad (0,0,1) */
-    nav {
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.5em;
-        width: 100%;
-    }
-    
-    /* especificidad (0,0,2) - Enlaces del nav en vertical */
-    nav a {
-        width: 100%;
-        justify-content: center;
-        padding: 0.8em;
-    }
-
-    /* especificidad (0,0,2) - Ocultar migas de navegación en móviles */
-    header + p {
-        display: none;
-    }
+/* especificidad: 001 */
+aside {
+    padding: 1em;
+    margin: 1em 0;
 }
 
-/* === REGLAS DE POSICIONAMIENTO PARA LISTAS === */
-
-/* especificidad (0,0,2) */
-ul li {
-    position: relative;
-    padding-left: 0.5rem;
-    list-style-position: inside;
-}
-
-/* especificidad (0,0,2) */
-ol li {
-    list-style-position: outside;
-    padding-left: 0.5rem;
-}
-
-/* === REGLAS DE POSICIONAMIENTO PARA LISTA DE DEFINICIÓN === */
-
-/* especificidad (0,0,1) */
-dl {
+/* especificidad: 003 */
+main section article {
     padding: 1.5rem;
     margin: 1.5rem 0;
-    border-radius: 0.5em;
-    border-left: 0.25em solid #FF6600;
 }
 
-/* especificidad (0,0,1) */
-dt {
-    margin: 1.5rem 0 0.5rem 0;
-    padding: 0.5rem;
-    border-radius: 0.25em;
+/* especificidad: 004 */
+main section article h3 {
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
 }
 
-/* especificidad (0,0,1) */
-dd {
-    margin: 0.5rem 0 1rem 2rem;
-    padding: 0.8rem;
-    border-radius: 0.375em;
-    border-left: 0.1875em solid rgba(255, 102, 0, 0.3);
+/* especificidad: 004 */
+main section article p {
+    margin: 1rem 0;
 }
 
-/* especificidad (0,0,2) */
-dt:first-of-type {
-    margin-top: 0;
+/* especificidad: 001 */
+footer {
+    padding: 1em;
+    margin-top: 2em;
 }
 
-/* === REGLAS DE POSICIONAMIENTO PARA ENLACES === */
-
-/* especificidad (0,0,2) */
+/* especificidad: 002 */
 footer a {
     display: inline-block;
     padding: 0.3em 0.6em;
@@ -129,67 +242,92 @@ footer a {
     border-radius: 0.3125em;
 }
 
-/* === REGLAS DE POSICIONAMIENTO PARA TABLA === */
-
-/* especificidad (0,0,1) */
-table {
+/* === MULTIMEDIA === */
+/* especificidad: 001 */
+video, audio {
     width: 100%;
-    max-width: 37.5em; /* Ancho máximo para tabla vertical */
-    margin: 2rem auto;
-    border-radius: 0.75em;
-    overflow: hidden;
+    height: auto;
 }
 
-/* especificidad (0,0,1) */
-caption {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    padding-bottom: 0.5rem;
-    border-bottom: 0.1875em solid #FF6600;
+/* especificidad: 001 */
+audio {
+    height: 2.5em;
 }
 
-/* especificidad (0,0,1) */
-th {
-    text-align: left;
-    padding: 1.2rem 1rem;
-    border: none;
-    width: 60%;
-}
-
-/* especificidad (0,0,1) */
-td {
-    text-align: center; 
-    padding: 1.2rem 1rem;
-    border: none;
-    border-bottom: 0.0625em solid rgba(255, 102, 0, 0.2);
-    width: 40%;
-}
-
-/* especificidad (0,1,1) */
-td:hover {
-    border-radius: 0.375em;
-}
-
-/* === MEDIA QUERIES PARA TABLA === */
+/* === MEDIA QUERIES === */
 @media screen and (max-width: 49.9375em) {
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
+    p {
+        text-align: left;
+    }
+    
+    /* especificidad: 001 */
+    ul, ol, dl {
+        padding-left: 1.5rem;
+    }
+    
+    /* especificidad: 001 */
+    dd {
+        margin-left: 1.5rem;
+    }
+    
+    /* especificidad: 001 */
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+    }
+    
+    /* especificidad: 002 */
+    header + p {
+        display: none;
+    }
+    
+    /* especificidad: 001 */
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5em;
+        width: 100%;
+    }
+    
+    /* especificidad: 002 */
+    nav a {
+        width: 100%;
+        justify-content: center;
+        padding: 0.8em;
+    }
+    
+    /* especificidad: 001 */
+    main {
+        padding: 1em;
+    }
+    
+    /* especificidad: 001 */
+    section, aside {
+        padding: 0.8em;
+        margin: 0.8em 0;
+    }
+    
+    /* especificidad: 001 */
     table {
         margin: 1rem auto;
         max-width: 100%;
     }
     
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
     caption {
         margin-bottom: 1rem;
     }
     
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
     th {
         padding: 1rem 0.8rem;
         width: 65%;
     }
     
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
     td {
         padding: 1rem 0.8rem;
         width: 35%;
@@ -197,35 +335,61 @@ td:hover {
 }
 
 @media screen and (max-width: 29.0625em) {
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
+    ul, ol, dl {
+        padding-left: 1rem;
+    }
+    
+    /* especificidad: 001 */
+    dd {
+        margin-left: 1rem;
+    }
+    
+    /* especificidad: 001 */
+    main {
+        padding: 0.8em;
+    }
+    
+    /* especificidad: 001 */
+    section, aside {
+        padding: 0.6em;
+        margin: 0.6em 0;
+    }
+    
+    /* especificidad: 001 */
+    header {
+        padding: 0.8em;
+    }
+    
+    /* especificidad: 001 */
     th {
         padding: 0.8rem 0.6rem;
         width: 70%;
     }
     
-    /* especificidad (0,0,1) */
+    /* especificidad: 001 */
     td {
         padding: 0.8rem 0.6rem;
         width: 30%;
     }
-}
 
-/* especificidad (0,0,1) */
-main section article {
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    border-radius: 0.375em;
-    border-left: 0.1875em solid #FF6600;
-}
+    /* especificidad: 003 */
+    article h2 + img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
 
-/* especificidad (0,0,2) */
-main section article h3 {
-    margin: 0 0 1rem 0;
-    padding-bottom: 0.5rem;
-    border-bottom: 0.0625em solid rgba(255, 102, 0, 0.3);
-}
+    video, img, svg{
+        max-width: 100%;
+        width:100%;
+    }
 
-/* especificidad (0,0,2) */
-main section article p {
-    margin: 1rem 0;
+    /* especificidad: 002 */
+    section > div {
+        width: 100%;
+        height: 15em;
+        margin: 1em 0;
+        border-radius: 0;
+    }
 }

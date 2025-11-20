@@ -12,6 +12,7 @@
     <link rel="icon" type="image/x-icon" href="multimedia/icono.png" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="js/ciudad.js"></script>
 </head>
 
@@ -35,25 +36,17 @@
         <section>
             <h2>Meteorología de MotoGP-Desktop</h2>
             <h3>Información de la Ciudad</h3>
-            <script>
-                // Crear instancia de la clase Ciudad
-                let ciudad = new Ciudad("Kuala Lumpur", "Malasia", "kualalumpurense");
-                ciudad.rellenarAtributos();
-                
-                // Escribir nombre de la ciudad
-                document.write("<p><strong>Ciudad:</strong> " + ciudad.getNombre() + "</p>");
-                
-                // Escribir país
-                document.write("<p><strong>País:</strong> " + ciudad.getPais() + "</p>");
-                
-                // Escribir información secundaria (gentilicio y población)
-                document.write("<h4>Información Secundaria</h4>");
-                document.write(ciudad.getInformacionSecundaria());
-                
-                // Escribir coordenadas
-                ciudad.escribirCoordenadas();
-            </script>
         </section>
     </main>
+    
+    <script>
+        // Crear instancia de la clase Ciudad
+        const ciudad = new Ciudad("Kuala Lumpur", "Malasia", "kualalumpurense");
+        ciudad.mostrarInformacionCiudad();
+        
+        // Obtener datos meteorológicos
+        ciudad.getMeteorologiaCarrera();
+        ciudad.getMeteorologiaEntrenos();
+    </script>
 </body>
 </html>
