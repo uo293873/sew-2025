@@ -100,7 +100,7 @@ class CargadorSVG {
         section.appendChild(svg);
         
         const main = document.querySelector('main');
-        const seccionSVG = main.querySelector('section:nth-of-type(2)');
+        const seccionSVG = document.querySelector('main > section:nth-child(2)');
         
         if (seccionSVG) {
             main.insertBefore(section, seccionSVG);
