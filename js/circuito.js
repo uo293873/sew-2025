@@ -42,18 +42,17 @@ class Circuito {
     #procesarHTML(contenidoHTML) {
         const parser = new DOMParser();
         const documentoHTML = parser.parseFromString(contenidoHTML, 'text/html');
-        const mainActual = document.querySelector('main');
-        const seccionHTML = mainActual.querySelector('section:first-of-type');
-        const secciones = documentoHTML.querySelectorAll('main > section');
-        const seccionContenedora = document.createElement('section');
-        
-        secciones.forEach(seccion => {
-            seccionContenedora.appendChild(seccion);
-        });
+        const seccionHTML = document.querySelector('main > section:first-of-type');
         
         if (seccionHTML) {
-            mainActual.insertBefore(seccionContenedora, seccionHTML);
-            seccionHTML.remove();
+            // Limpiar el contenido de la sección
+            seccionHTML.innerHTML = '';
+            
+            // Añadir todas las secciones del HTML procesado
+            const secciones = documentoHTML.querySelectorAll('main > section');
+            secciones.forEach(seccion => {
+                seccionHTML.appendChild(seccion);
+            });
         }
     }
 }
@@ -91,20 +90,20 @@ class CargadorSVG {
         const documentoSVG = parser.parseFromString(contenidoSVG, 'image/svg+xml');
         const svg = documentoSVG.querySelector('svg');
 
-        const section = document.createElement('section');
-        
-        const h2 = document.createElement('h2');
-        h2.textContent = 'Perfil de Altimetría del Circuito';
-        section.appendChild(h2);
-        
-        section.appendChild(svg);
-        
-        const main = document.querySelector('main');
+        // Cambiar la versión del SVG
+        svg.setAttribute('version', '1.1');
+
         const seccionSVG = document.querySelector('main > section:nth-child(2)');
         
         if (seccionSVG) {
-            main.insertBefore(section, seccionSVG);
-            seccionSVG.remove();
+            // Limpiar el contenido de la sección
+            seccionSVG.innerHTML = '';
+            
+            // Añadir el título y el SVG
+            const h2 = document.createElement('h2');
+            h2.textContent = 'Perfil de Altimetría del Circuito';
+            seccionSVG.appendChild(h2);
+            seccionSVG.appendChild(svg);
         }
     }
 }

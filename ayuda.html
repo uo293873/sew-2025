@@ -22,7 +22,7 @@
             <a href="piloto.html" title="Información del piloto">Piloto</a>
             <a href="circuito.html" title="Información del circuito">Circuito</a>
             <a href="meteorologia.html" title="Información sobre meteorología">Meteorología</a>
-            <a href="clasificaciones.html" title="Clasificaciones de MotoGP">Clasificaciones</a>
+            <a href="clasificaciones.php" title="Clasificaciones de MotoGP">Clasificaciones</a>
             <a href="juegos.html" title="Juegos de MotoGP">Juegos</a>
             <a href="ayuda.html" title="Ayuda de MotoGP" class="active">Ayuda</a>
         </nav>
@@ -76,21 +76,27 @@
 
             <article>
                 <h3>Clasificaciones</h3>
-                <p>En la sección de Clasificaciones puedes consultar las tablas de puntuación y posiciones actuales del campeonato de MotoGP. Aquí encontrarás el ranking de pilotos y constructores con toda la información relevante de la temporada.</p>
-                <p>Las tablas muestran los puntos acumulados por cada piloto y constructor después de cada Gran Premio, incluyendo detalles sobre victorias, podios y la evolución a lo largo de la temporada. Esta información te permite seguir la competición y conocer la situación del campeonato en cualquier momento
-                <p>La sección de Clasificaciones presenta las tablas de puntuación y posiciones actuales del campeonato de MotoGP. Aquí puedes consultar el ranking de pilotos y constructores en tiempo real.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                <p>Las clasificaciones se actualizan después de cada Gran Premio e incluyen información detallada sobre puntos acumulados, victorias, podios y la evolución de cada piloto a lo largo de la temporada.</p>
+                <p>La sección de Clasificaciones presenta información completa sobre el Gran Premio de Malasia celebrado en el Circuito Internacional de Sepang.</p>
+                <p>Esta página lee automáticamente los datos del archivo XML del circuito y muestra de forma estructurada:</p>
+                <ul>
+                    <li>Información general del circuito: nombre oficial, localidad, país, longitud y anchura del trazado, número de vueltas de la carrera, fecha y hora de inicio del Gran Premio.</li>
+                    <li>Ganador de la carrera: nombre del piloto vencedor y el tiempo total empleado en completar la carrera.</li>
+                    <li>Clasificación del campeonato mundial: tabla con las posiciones de los pilotos en el mundial tras la carrera, mostrando su posición, nombre y puntos acumulados en la temporada.</li>
+                </ul>
+                <p>Toda la información se actualiza automáticamente al cargar la página, leyendo los datos directamente del archivo XML del circuito. Esto permite mantener la información siempre actualizada sin necesidad de modificar el código HTML.</p>
             </article>
 
             <article>
                 <h3>Juegos</h3>
                 <p>La sección de Juegos ofrece entretenimiento interactivo relacionado con MotoGP. Esta área incluye diversos juegos y actividades que permiten a los usuarios poner a prueba sus conocimientos sobre el motociclismo.</p>
-                <p>En la página de juegote ofrece entretenimiento interactivo relacionado con MotoGP. Aquí encontrarás diversos juegos y actividades para poner a prueba tus conocimientos y habilidades sobre el motociclismo.</p>
+                <p>En la página de juegos encontrarás diversos juegos y actividades para poner a prueba tus conocimientos y habilidades sobre el motociclismo.</p>
                 <p>En la página principal de juegos verás un listado con todos los juegos disponibles. Puedes acceder a cada uno haciendo clic en su enlace correspondiente:</p>
                 <ul>
                     <li>Juego de Memoria con Cartas: Un juego que desafía tu memoria visual con logos de las principales marcas de MotoGP. Verás una cuadrícula de 12 cartas con logos de Honda, Yamaha, Ducati, KTM, Aprilia y MotoGP. El objetivo es encontrar las parejas de cartas iguales volteándolas de dos en dos. Cada vez que encuentres una pareja, las cartas permanecerán visibles. ¡Intenta completar el juego en el menor número de intentos posible!</li>
                     <li>Cronómetro: Una herramienta sencilla para medir tiempos. Dispones de tres botones: "Arrancar" para iniciar la cuenta, "Parar" para detener el tiempo sin reiniciarlo, y "Reiniciar" para poner el cronómetro a cero. El tiempo se muestra en formato minutos:segundos.décimas y se actualiza continuamente mientras está en marcha.</li>
+                    <li>Cronómetro PHP: Similar al cronómetro anterior, pero implementado en PHP. Permite medir tiempos con los mismos controles y formato, y mantiene el estado del cronómetro entre solicitudes gracias a la sesión.</li>
+                    <li>Configuración Test: Herramienta de administración de la base de datos para las pruebas de usabilidad. Permite crear la base de datos necesaria, reiniciarla eliminando todos los datos, exportar los resultados de las pruebas a archivos CSV, y eliminar completamente la base de datos. Esta utilidad es esencial para gestionar los datos recopilados durante las pruebas de usabilidad.</li>
+                    <li>Test de Usabilidad: Prueba interactiva en tres fases para evaluar tus conocimientos sobre el Circuito Internacional de Sepang. Primero introduces tus datos personales (profesión, edad, género, nivel de pericia y tipo de dispositivo), después respondes 10 preguntas sobre el circuito mientras se mide automáticamente el tiempo empleado, y finalmente puedes dejar tu valoración y comentarios. El facilitador también puede registrar observaciones durante la prueba. Al terminar, verás cuántas respuestas acertaste.</li>
                 </ul>
             </article>
         </section>
