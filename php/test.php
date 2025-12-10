@@ -1,8 +1,6 @@
 <?php
-// Cargar la clase Cronometro sin mostrar su salida HTML
-ob_start();
-require_once '../cronometro.php';
-ob_end_clean();
+// Cargar la clase Cronometro
+require_once 'cronometro.php';
 
 // Estados: 0 = inicio, 1 = datos personales, 2 = preguntas iniciadas, 3 = completada
 if (!isset($_SESSION['estado'])) {
@@ -33,7 +31,7 @@ if (isset($_POST['terminar'])) {
     
     // Calcular respuestas correctas
     $respuestas_correctas = 0;
-    $correctas = ['Sepang', 'Malasia', '5540', '20', 'Petronas', 'Alex Marquez', '16', '3', '101.7383756', 'Yamaha'];
+    $correctas = ['Sepang', 'Malasia', '5540', '20', 'Petronas', 'Alex Marquez', '16', '3', '25.18', 'Red Bull'];
     
     for ($i = 1; $i <= 10; $i++) {
         if (isset($_POST['p' . $i]) && trim($_POST['p' . $i]) === $correctas[$i - 1]) {
@@ -55,7 +53,7 @@ if (isset($_POST['terminar'])) {
         $valoracion = $_POST['valoracion'];
         $tarea_completada = ($respuestas_correctas >= 7) ? 1 : 0;
         
-        // Insertar usuario (codigo se autogenera)
+        // Insertar usuario
         $sql_usuario = "INSERT INTO Usuario (profesion, edad, id_genero, id_pericia) 
                         VALUES ('$profesion', '$edad', '$genero', '$pericia')";
         
@@ -193,7 +191,7 @@ $estado = $_SESSION['estado'];
                         <label for="p8">8. ¿Cuántos sectores tiene el circuito?</label>
                         <input type="text" id="p8" name="p8" required />
                         
-                        <label for="p9">9. ¿Cuál es la longitud geográfica de las coordenadas de origen?</label>
+                        <label for="p9">9. ¿Cuál fue la temperatura media del primer dia de entrenamientos antes de empezar la competición?</label>
                         <input type="text" id="p9" name="p9" required />
                         
                         <label for="p10">10. ¿Qué marca de moto utiliza el piloto Maverick Viñales?</label>
