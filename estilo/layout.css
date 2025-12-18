@@ -372,14 +372,14 @@ input[type="submit"] {
     
     /* especificidad: 001 */
     th {
-        padding: 1rem 0.8rem; /* Advertencia del validador: redefinicion de padding */
-        width: 65%; /* Advertencia del validador: redefinicion de width */
+        padding: 0.6rem 0.4rem; /* Advertencia del validador: redefinicion de padding */
+        width: auto; /* Advertencia del validador: redefinicion de width */
     }
     
     /* especificidad: 001 */
     td {
-        padding: 1rem 0.8rem; /* Advertencia del validador: redefinicion de padding */
-        width: 35%; /* Advertencia del validador: redefinicion de width */
+        padding: 0.6rem 0.4rem; /* Advertencia del validador: redefinicion de padding */
+        width: auto; /* Advertencia del validador: redefinicion de width */
     }
 }
 
@@ -415,14 +415,14 @@ input[type="submit"] {
     
     /* especificidad: 001 */
     th {
-        padding: 0.8rem 0.6rem; /* Advertencia del validador: redefinicion de padding */
-        width: 70%; /* Advertencia del validador: redefinicion de width */
+        padding: 0.6rem 0.4rem; /* Advertencia del validador: redefinicion de padding */
+        width: auto; /* Advertencia del validador: redefinicion de width */
     }
     
     /* especificidad: 001 */
     td {
-        padding: 0.8rem 0.6rem; /* Advertencia del validador: redefinicion de padding */
-        width: 30%; /* Advertencia del validador: redefinicion de width */
+        padding: 0.6rem 0.4rem; /* Advertencia del validador: redefinicion de padding */
+        width: auto; /* Advertencia del validador: redefinicion de width */
     }
 
     /* especificidad: 003 */

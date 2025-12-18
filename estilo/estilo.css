@@ -289,9 +289,19 @@ footer a:active {
     /* especificidad: 001 */
     /* especificidad: 001 */
     /* especificidad: 001 */
-    table, th, td { font-size: 0.9rem; }
+    table, th, td { font-size: 0.85rem; }
     /* especificidad: 001 */
     caption { font-size: 1.1rem; } /*redefinición de font-size*/
+    
+    /* especificidad: 001 */
+    th { 
+        padding: 0.8rem 0.5rem; /*redefinición de padding para tablas responsive */
+    }
+    
+    /* especificidad: 001 */
+    td { 
+        padding: 0.8rem 0.5rem; /*redefinición de padding para tablas responsive */
+    }
 }
 
 @media screen and (max-width: 29.0625em) {
@@ -308,7 +318,7 @@ footer a:active {
     /* especificidad: 001 */
     /* especificidad: 001 */
     /* especificidad: 001 */
-    table, th, td { font-size: 0.8rem; } /*redefinición de font-size*/
+    table, th, td { font-size: 0.7rem; } /*redefinición de font-size*/
     /* especificidad: 001 */
     caption { font-size: 1rem; } /*redefinición de font-size*/
 }
