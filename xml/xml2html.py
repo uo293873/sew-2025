@@ -284,12 +284,24 @@ def main():
         # Sección: Referencias
         if referencias:
             refs_content = []
-            refs_content.append("<ul>")
-            for ref in referencias:
-                enlace = html.addLink(ref.text, ref.text)
-                refs_content.append(f"    <li>{enlace}</li>")
-            refs_content.append("</ul>")
-            refs_html = "\n".join(refs_content)
+            refs_textos = []
+            for i, ref in enumerate(referencias, 1):
+                url = ref.text
+                # Determinar el texto según la URL
+                if 'motogp.com' in url:
+                    texto = "Sitio oficial de MotoGP"
+                elif 'wikipedia' in url:
+                    texto = "Wikipedia"
+                elif 'sepangcircuit.com' in url:
+                    texto = "Sitio oficial del circuito de Sepang"
+                else:
+                    texto = f"Referencia {i}"
+                
+                enlace = html.addLink(url, texto)
+                refs_textos.append(enlace)
+            
+            # Unir los enlaces con separador " | " como en el footer de piloto.html
+            refs_html = html.addParagraph(" | ".join(refs_textos))
             documento.append(html.addSection("Referencias", refs_html))
         
         # Sección: Multimedia
