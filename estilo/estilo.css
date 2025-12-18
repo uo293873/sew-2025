@@ -264,8 +264,8 @@ footer a:hover {
 
 /* especificidad: 012 */
 footer a:visited {
-    color: #CC5500; /*Advertecia del validador: hereda background-color de footer*/
-    border-color: #CC5500;
+    color: #FF9955; /*Advertecia del validador: hereda background-color de footer*/
+    border-color: #FF9955;
 }
 
 /* especificidad: 012 */

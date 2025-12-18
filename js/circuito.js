@@ -46,9 +46,9 @@ class Circuito {
         
         if (seccionHTML) {
             // Eliminar solo el párrafo y el input, manteniendo el h2
-            const parrafo = seccionHTML.querySelector('p');
+            const label = seccionHTML.querySelector('label');
             const input = seccionHTML.querySelector('input');
-            if (parrafo) parrafo.remove();
+            if (label) label.remove();
             if (input) input.remove();
             
             // Añadir todas las secciones del HTML procesado
@@ -179,9 +179,9 @@ class CargadorKML {
         const seccionKML = document.querySelector('main > section:nth-of-type(3)');
         
         if (seccionKML) {
-            const parrafo = seccionKML.querySelector('p');
+            const label = seccionKML.querySelector('label');
             const input = seccionKML.querySelector('input');
-            if (parrafo) parrafo.remove();
+            if (label) label.remove();
             if (input) input.remove();
             
             const divMapa = document.createElement('div');
