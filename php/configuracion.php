@@ -285,16 +285,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <legend>Operaciones de Base de Datos</legend>
 
                     <button type="submit" name="crear">Crear Base de Datos</button>
-                    <p>Crea la base de datos y las tablas necesarias si no existen.</p>
 
                     <button type="submit" name="reiniciar">Reiniciar Base de Datos</button>
-                    <p>Vacía todas las tablas pero mantiene la estructura.</p>
 
                     <button type="submit" name="exportar">Exportar Datos (CSV)</button>
-                    <p>Descarga todos los datos en formato CSV.</p>
 
                     <button type="submit" name="eliminar" >Eliminar Base de Datos</button>
-                    <p>Elimina completamente la base de datos y todos sus datos.</p>
                 </fieldset>
             </form>
 

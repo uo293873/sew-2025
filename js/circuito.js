@@ -42,11 +42,14 @@ class Circuito {
     #procesarHTML(contenidoHTML) {
         const parser = new DOMParser();
         const documentoHTML = parser.parseFromString(contenidoHTML, 'text/html');
-        const seccionHTML = document.querySelector('main > section:first-of-type');
+        const seccionHTML = document.querySelector('main > section:nth-of-type(1)');
         
         if (seccionHTML) {
-            // Limpiar el contenido de la sección
-            seccionHTML.innerHTML = '';
+            // Eliminar solo el párrafo y el input, manteniendo el h2
+            const parrafo = seccionHTML.querySelector('p');
+            const input = seccionHTML.querySelector('input');
+            if (parrafo) parrafo.remove();
+            if (input) input.remove();
             
             // Añadir todas las secciones del HTML procesado
             const secciones = documentoHTML.querySelectorAll('main > section');
@@ -93,7 +96,7 @@ class CargadorSVG {
         // Cambiar la versión del SVG
         svg.setAttribute('version', '1.1');
 
-        const seccionSVG = document.querySelector('main > section:nth-child(2)');
+        const seccionSVG = document.querySelector('main > section:nth-of-type(2)');
         
         if (seccionSVG) {
             // Limpiar el contenido de la sección
@@ -173,7 +176,7 @@ class CargadorKML {
     }
 
     async #insertarCapaKML() {
-        const seccionKML = document.querySelector('main > section:last-of-type');
+        const seccionKML = document.querySelector('main > section:nth-of-type(3)');
         
         if (seccionKML) {
             const parrafo = seccionKML.querySelector('p');

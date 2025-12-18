@@ -1,7 +1,6 @@
 /* Alejandro Aldea Viana - UO293873 */
 /* Estilos generales del proyecto MotoGP-Desktop*/
 
-/* === RESET Y BASE === */
 /* especificidad: 001 */
 body {
     background-color: #0A1A2F;
@@ -11,33 +10,26 @@ body {
     line-height: 1.6;
 }
 
-/* === ENCABEZADOS === */
 /* especificidad: 001 */
-h1, h2, h3, h4, h5, h6 {
+/* especificidad: 001 */
+/* especificidad: 001 */
+h1, h2, h3{
     font-family: "Trebuchet MS", Arial, sans-serif;
     line-height: 1.2;
     letter-spacing: 0.01em;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de body*/
 }
 
 /* especificidad: 001 */
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FF6600;
-    letter-spacing: 0.02em;
-}
-
-/* especificidad: 002 */
-h1 a {
-    color: inherit;
-    text-decoration: none;
 }
 
 /* especificidad: 001 */
 h2 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #FF6600;
     border-bottom: 0.125em solid rgba(255, 102, 0, 0.3);
 }
 
@@ -45,49 +37,44 @@ h2 {
 h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #E0E0E0;
 }
 
-/* especificidad: 001 */
-h4 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: #CCCCCC;
-}
-
-/* === TEXTO === */
 /* especificidad: 001 */
 a {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de body*/
     text-decoration: none;
 }
 
-/* === LISTAS === */
+/* especificidad: 001 */
+/* especificidad: 001 */
 /* especificidad: 001 */
 ul, ol, dl {
-    color: #E0E0E0;
+    color: #E0E0E0; /*Advertecia del validador: hereda background-color de body*/
 }
 
+/* especificidad: 002 */
 /* especificidad: 002 */
 ul li {
     list-style-type: square;
 }
 
 /* especificidad: 012 */
+/* especificidad: 012 */
 ul li:hover, ol li:hover {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de body*/
     font-weight: 500;
 }
 
 /* especificidad: 003 */
+/* especificidad: 003 */
 ul ul li, ol ol li {
     font-size: 0.95rem;
-    color: #CCCCCC;
+    color: #CCCCCC; /*Advertecia del validador: hereda background-color de body*/
 }
 
 /* especificidad: 003 */
 ul li a {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de body*/
     font-weight: 500;
     border-bottom: 0.0625em dotted rgba(255, 102, 0, 0.5);
 }
@@ -106,7 +93,6 @@ ul li a:active {
     background-color: #FF6600;
 }
 
-/* === LISTAS DE DEFINICIÓN === */
 /* especificidad: 001 */
 dl {
     background-color: rgba(255, 102, 0, 0.05);
@@ -130,7 +116,7 @@ dt:hover {
 /* especificidad: 001 */
 dd {
     font-style: italic;
-    background-color: rgba(224, 224, 224, 0.05);
+    background-color: rgba(224, 224, 224, 0.05); /*Advertecia del validador: hereda color de dl*/
     line-height: 1.7;
 }
 
@@ -140,11 +126,9 @@ dd:hover {
     color: #FFFFFF;
 }
 
-/* === TABLAS === */
 /* especificidad: 001 */
 table {
-    width: 100%;
-    background-color: #1B2735;
+    background-color: #1B2735; /*Advertecia del validador: hereda color de body*/
     font-family: "Trebuchet MS", Arial, sans-serif;
     border-radius: 0.5em;
 }
@@ -153,7 +137,7 @@ table {
 caption {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de table*/
     text-align: left;
     letter-spacing: 0.1em;
 }
@@ -170,25 +154,19 @@ th {
 
 /* especificidad: 011 */
 th:hover {
-    background-color: #FF8833;
+    background-color: #FF8833; /*Advertecia del validador: hereda color de th*/
 }
 
 /* especificidad: 001 */
 td {
-    background-color: transparent;
-    color: #FFFFFF;
+    color: #FFFFFF; /*Advertecia del validador: hereda background-color de table*/
     text-align: center;
     border: 0.0625em solid #444;
 }
 
 /* especificidad: 012 */
-tr:nth-child(even) td {
-    background-color: rgba(255, 102, 0, 0.05);
-}
-
-/* especificidad: 012 */
 tr:hover td {
-    background-color: rgba(255, 102, 0, 0.15);
+    background-color: rgba(255, 102, 0, 0.15); /*Advertecia del validador: hereda color de td*/
     border-bottom-color: #FF6600;
 }
 
@@ -199,21 +177,20 @@ td:hover {
     font-weight: 600;
 }
 
-/* === LAYOUT === */
 /* especificidad: 001 */
 header {
-    background-color: #111111;
+    background-color: #111111; /*Advertecia del validador: hereda color de body*/
 }
 
 /* especificidad: 002 */
 header + p {
     font-size: 0.85em;
-    color: #CCCCCC;
+    color: #CCCCCC; /*Advertecia del validador: hereda background-color de body*/
 }
 
 /* especificidad: 002 */
 nav a {
-    color: #FFFFFF;
+    color: #FFFFFF; /*Advertecia del validador: hereda background-color de body*/
     font-weight: bold;
     border-radius: 0.25em;
 }
@@ -224,7 +201,7 @@ nav a:hover {
     background-color: rgba(255, 102, 0, 0.1);
 }
 
-/* especificidad: 011 */
+/* especificidad: 012 */
 nav a.active {
     color: #FF6600;
     background-color: #1B2735;
@@ -233,27 +210,27 @@ nav a.active {
 
 /* especificidad: 001 */
 section {
-    background-color: #111111;
+    background-color: #111111; /*Advertecia del validador: hereda color de body*/
     border-radius: 0.5em;
 }
 
 /* especificidad: 001 */
 aside {
-    background-color: #1B2735;
+    background-color: #1B2735; /*Advertecia del validador: hereda color de body*/
     border-left: 0.25em solid #FF6600;
     border-radius: 0.5em;
 }
 
 /* especificidad: 003 */
 main section article {
-    background-color: rgba(255, 102, 0, 0.03);
+    background-color: rgba(255, 102, 0, 0.03); /*Advertecia del validador: hereda color de body*/
     border-radius: 0.375em;
     border-left: 0.1875em solid #FF6600;
 }
 
 /* especificidad: 004 */
 main section article h3 {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de body*/
     font-size: 1.3rem;
     font-weight: 600;
     border-bottom: 0.0625em solid rgba(255, 102, 0, 0.3);
@@ -266,13 +243,13 @@ main section article p {
 
 /* especificidad: 001 */
 footer {
-    background-color: #111111;
+    background-color: #111111; /*Advertecia del validador: hereda color de body*/
     text-align: center;
 }
 
 /* especificidad: 002 */
 footer a {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de footer*/
     font-weight: 500;
     border-bottom: 0.0625em dotted #FF6600;
 }
@@ -287,7 +264,7 @@ footer a:hover {
 
 /* especificidad: 012 */
 footer a:visited {
-    color: #CC5500;
+    color: #CC5500; /*Advertecia del validador: hereda background-color de footer*/
     border-color: #CC5500;
 }
 
@@ -297,101 +274,63 @@ footer a:active {
     background-color: #FFAA66;
 }
 
-/* especificidad: 012 */
-footer a:focus {
-    outline: 0.125em solid #FF6600;
-    outline-offset: 0.125em;
-    background-color: rgba(255, 102, 0, 0.1);
-}
-
-/* === MULTIMEDIA === */
-/* especificidad: 001 */
-video {
-    width: 100%;
-    height: auto;
-    max-width: 60%;
-}
-
-/* especificidad: 001 */
-img, picture, svg {
-    max-width: 60%;
-    height: auto;
-}
-
-/* especificidad: 001 */
-audio {
-    width: 100%;
-    height: 2.5em;
-    max-width: 31.25em;
-}
-
 /* === MEDIA QUERIES === */
 @media screen and (max-width: 49.9375em) {
     /* especificidad: 001 */
-    h1 { font-size: 2rem; }
+    h1 { font-size: 2rem; } /*redefinición de font-size*/
     /* especificidad: 001 */
-    h2 { font-size: 1.5rem; }
+    h2 { font-size: 1.5rem; } /*redefinición de font-size*/
     /* especificidad: 001 */
-    h3 { font-size: 1.3rem; }
-    /* especificidad: 001 */
-    h4 { font-size: 1.1rem; }
-    /* especificidad: 001 */
-    h5 { font-size: 1rem; }
-    /* especificidad: 001 */
-    h6 { font-size: 0.9rem; }
+    h3 { font-size: 1.3rem; } /*redefinición de font-size*/
     
     /* especificidad: 001 */
-    body { font-size: 0.9rem; }
+    body { font-size: 0.9rem; } /*redefinición de font-size*/
     
+    /* especificidad: 001 */
+    /* especificidad: 001 */
     /* especificidad: 001 */
     table, th, td { font-size: 0.9rem; }
     /* especificidad: 001 */
-    caption { font-size: 1.1rem; }
+    caption { font-size: 1.1rem; } /*redefinición de font-size*/
 }
 
 @media screen and (max-width: 29.0625em) {
     /* especificidad: 001 */
-    h1 { font-size: 1.8rem; }
+    h1 { font-size: 1.8rem; } /*redefinición de font-size*/
     /* especificidad: 001 */
-    h2 { font-size: 1.3rem; }
+    h2 { font-size: 1.3rem; } /*redefinición de font-size*/
     /* especificidad: 001 */
-    h3 { font-size: 1.2rem; }
-    /* especificidad: 001 */
-    h4 { font-size: 1.05rem; }
+    h3 { font-size: 1.2rem; } /*redefinición de font-size*/
     
     /* especificidad: 001 */
-    body { font-size: 0.8rem; }
+    body { font-size: 0.8rem; } /*redefinición de font-size*/
     
     /* especificidad: 001 */
-    table, th, td { font-size: 0.8rem; }
     /* especificidad: 001 */
-    caption { font-size: 1rem; }
+    /* especificidad: 001 */
+    table, th, td { font-size: 0.8rem; } /*redefinición de font-size*/
+    /* especificidad: 001 */
+    caption { font-size: 1rem; } /*redefinición de font-size*/
 }
 
-/* === FORMULARIOS === */
 /* especificidad: 001 */
 fieldset {
-    background-color: rgba(27, 39, 53, 0.5);
+    background-color: rgba(27, 39, 53, 0.5); /*Advertecia del validador: hereda color de body*/
     border: 0.125em solid #FF6600;
     border-radius: 0.5em;
-    padding: 1.5em;
-    margin-bottom: 1.5em;
 }
 
 /* especificidad: 001 */
 legend {
-    color: #FF6600;
+    color: #FF6600; /*Advertecia del validador: hereda background-color de fieldset*/
     font-size: 1.3rem;
     font-weight: 600;
-    padding: 0 0.5em;
 }
 
 /* especificidad: 002 */
 fieldset p {
     background-color: rgba(255, 102, 0, 0.1);
     border-left: 0.25em solid #FF6600;
-    padding: 0.75em 1em;
-    margin: 0 0 1em 0;
     border-radius: 0.25em;
     color: #CCCCCC;
     font-style: italic;
@@ -399,52 +338,44 @@ fieldset p {
 
 /* especificidad: 001 */
 label {
-    display: block;
-    color: #E0E0E0;
+    color: #E0E0E0; /*Advertecia del validador: hereda background-color de body*/
     font-weight: 500;
-    margin-bottom: 0.5em;
-    margin-top: 1em;
 }
 
 /* especificidad: 011 */
-label:first-of-type {
-    margin-top: 0;
-}
-
 /* especificidad: 011 */
 input[type="text"],
 input[type="number"],
-input[type="email"],
+/* especificidad: 001 */
+/* especificidad: 001 */
 select,
 textarea {
-    width: 100%;
-    padding: 0.75em;
     background-color: #1B2735;
     color: #E0E0E0;
     border: 0.125em solid #444444;
     border-radius: 0.375em;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
     font-size: 1rem;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
 }
 
+/* especificidad: 021 */
 /* especificidad: 021 */
 input[type="text"]:focus,
 input[type="number"]:focus,
-input[type="email"]:focus,
+/* especificidad: 011 */
+/* especificidad: 011 */
 select:focus,
 textarea:focus {
-    outline: none;
     border-color: #FF6600;
-    background-color: #0A1A2F;
-    box-shadow: 0 0 0.5em rgba(255, 102, 0, 0.3);
+    background-color: #0A1A2F; /*Advertecia del validador: hereda color de select/textarea */
 }
 
 /* especificidad: 021 */
+/* especificidad: 021 */
 input[type="text"]:hover,
 input[type="number"]:hover,
-input[type="email"]:hover,
+/* especificidad: 011 */
+/* especificidad: 011 */
 select:hover,
 textarea:hover {
     border-color: #666666;
@@ -453,11 +384,6 @@ textarea:hover {
 /* especificidad: 001 */
 select {
     cursor: pointer;
-    appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23FF6600" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right 0.5em center;
-    padding-right: 2.5em;
 }
 
 /* especificidad: 002 */
@@ -468,40 +394,22 @@ select option {
 
 /* especificidad: 001 */
 textarea {
-    resize: vertical;
     min-height: 6em;
     line-height: 1.5;
+    resize: vertical;
 }
 
 /* especificidad: 011 */
+/* especificidad: 011 */
 button[type="submit"],
 input[type="submit"] {
-    background: linear-gradient(135deg, #FF6600 0%, #CC5500 100%);
+    background-color: #FF6600;
     color: #FFFFFF;
     border: none;
-    padding: 0.875em 2em;
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 0.375em;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 1em 0.5em 0 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);
-}
-
-/* especificidad: 021 */
-button[type="submit"]:hover,
-input[type="submit"]:hover {
-    background: linear-gradient(135deg, #FF7722 0%, #DD6611 100%);
-    transform: translateY(-0.125em);
-    box-shadow: 0 0.375em 0.75em rgba(255, 102, 0, 0.4);
-}
-
-/* especificidad: 021 */
-button[type="submit"]:active,
-input[type="submit"]:active {
-    transform: translateY(0);
-    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.3);
 }

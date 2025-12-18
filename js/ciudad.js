@@ -44,12 +44,30 @@ class Ciudad {
         return ul;
     }
 
-    #escribirCoordenadas() {
+    mostrarInformacionCiudad() {
+        this.#rellenarAtributos();
+        
         const section = document.querySelector('section');
         
-        const parrafo = document.createElement('p');
-        parrafo.textContent = 'Coordenadas del centro de ' + this.#nombre + ':';
-        section.appendChild(parrafo);
+        const article = document.createElement('article');
+        
+        const h3 = document.createElement('h3');
+        h3.textContent = 'Información de la Ciudad';
+        article.appendChild(h3);
+        
+        const pCiudad = document.createElement('p');
+        pCiudad.textContent = 'Ciudad: ' + this.#getNombre();
+        article.appendChild(pCiudad);
+        
+        const pPais = document.createElement('p');
+        pPais.textContent = 'País: ' + this.#getPais();
+        article.appendChild(pPais);
+        
+        article.appendChild(this.#getInformacionSecundaria());
+        
+        const pCoords = document.createElement('p');
+        pCoords.textContent = 'Coordenadas del centro de ' + this.#nombre + ':';
+        article.appendChild(pCoords);
         
         const ul = document.createElement('ul');
         
@@ -61,28 +79,9 @@ class Ciudad {
         liLongitud.textContent = 'Longitud: ' + this.#coordenadas.longitud;
         ul.appendChild(liLongitud);
         
-        section.appendChild(ul);
-    }
-
-    mostrarInformacionCiudad() {
-        this.#rellenarAtributos();
+        article.appendChild(ul);
         
-        const section = document.querySelector('section');
-        
-        const pCiudad = document.createElement('p');
-        pCiudad.textContent = 'Ciudad: ' + this.#getNombre();
-        section.appendChild(pCiudad);
-        
-        const pPais = document.createElement('p');
-        pPais.textContent = 'País: ' + this.#getPais();
-        section.appendChild(pPais);
-        
-        const h4 = document.createElement('h4');
-        h4.textContent = 'Información Secundaria';
-        section.appendChild(h4);
-        section.appendChild(this.#getInformacionSecundaria());
-        
-        this.#escribirCoordenadas();
+        section.appendChild(article);
     }
 
     getMeteorologiaCarrera() {
@@ -108,19 +107,21 @@ class Ciudad {
     #procesarJSONCarrera(datos) {
         const section = document.querySelector('section');
         
+        const article = document.createElement('article');
+        
         const h3 = document.createElement('h3');
         h3.textContent = 'Meteorología del Día de la Carrera (26 de octubre de 2025) - 8:00 AM';
-        section.appendChild(h3);
+        article.appendChild(h3);
         
         // Datos diarios
         if (datos.daily) {
             const pSalida = document.createElement('p');
-            pSalida.innerHTML = 'Salida del sol:' + datos.daily.sunrise[0];
-            section.appendChild(pSalida);
+            pSalida.innerHTML = 'Salida del sol: ' + this.#formatearHora(datos.daily.sunrise[0]);
+            article.appendChild(pSalida);
             
             const pPuesta = document.createElement('p');
-            pPuesta.innerHTML = 'Puesta del sol:' + datos.daily.sunset[0];
-            section.appendChild(pPuesta);
+            pPuesta.innerHTML = 'Puesta del sol: ' + this.#formatearHora(datos.daily.sunset[0]);
+            article.appendChild(pPuesta);
         }
         
         // Buscar el índice correspondiente a las 8:00
@@ -135,8 +136,6 @@ class Ciudad {
             }
             
             if (indice8AM !== -1) {
-                const article = document.createElement('article');
-                
                 const pTemp = document.createElement('p');
                 pTemp.innerHTML = 'Temperatura: ' + datos.hourly.temperature_2m[indice8AM] + ' °C';
                 article.appendChild(pTemp);
@@ -160,10 +159,10 @@ class Ciudad {
                 const pDirViento = document.createElement('p');
                 pDirViento.innerHTML = 'Dirección del viento: ' + datos.hourly.wind_direction_10m[indice8AM] + ' °';
                 article.appendChild(pDirViento);
-                
-                section.appendChild(article);
             }
         }
+        
+        section.appendChild(article);
     }
 
     getMeteorologiaEntrenos() {
@@ -188,10 +187,12 @@ class Ciudad {
     #procesarJSONEntrenos(datos) {
         const section = document.querySelector('section');
         
-        // Crear sección para datos de entrenamientos
+        // Crear article para datos de entrenamientos
+        const article = document.createElement('article');
+        
         const h3 = document.createElement('h3');
         h3.textContent = 'Meteorología de los Días de Entrenamientos (23-25 de octubre de 2025)';
-        section.appendChild(h3);
+        article.appendChild(h3);
         
         if (datos.hourly && datos.hourly.time) {
             // Agrupar datos por día usando arrays
@@ -247,7 +248,6 @@ class Ciudad {
             }
             
             // Crear tabla con medias
-            const article = document.createElement('article');
             const table = document.createElement('table');
             
             const caption = document.createElement('caption');
@@ -313,6 +313,14 @@ class Ciudad {
             suma = suma + datos[i];
         }
         return (suma / datos.length).toFixed(2);
+    }
+
+    #formatearHora(fechaISO) {
+        // Convertir formato ISO 8601 a solo hora HH:MM
+        const fecha = new Date(fechaISO);
+        const horas = ('0' + fecha.getHours()).slice(-2);
+        const minutos = ('0' + fecha.getMinutes()).slice(-2);
+        return horas + ':' + minutos;
     }
 
     #crearFilaDia(tbody, fecha, temp, lluvia, viento, humedad, idDia) {

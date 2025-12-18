@@ -10,7 +10,7 @@ class Clasificacion {
         // Obtiene el archivo XML
         $datos = file_get_contents($this->documento);
         if($datos == null) {
-            echo "<h3>Error en el archivo XML recibido</h3>";
+            echo "<h2>Error en el archivo XML recibido</h2>";
             return;
         }
 
@@ -19,7 +19,7 @@ class Clasificacion {
 
         // Informacion general del circuito
         echo "<section>";
-        echo "<h3>Información del Circuito</h3>";
+        echo "<h2>Información del Circuito</h2>";
         echo "<p>Nombre: {$xml->nombre}</p>";
         echo "<p>Localidad: {$xml->localidad}, {$xml->pais}</p>";
         echo "<p>Longitud: {$xml->longitud} {$xml->longitud['unidades']}</p>";
@@ -31,14 +31,14 @@ class Clasificacion {
 
         // Vencedor de la carrera
         echo "<section>";
-        echo "<h3>Vencedor de la Carrera</h3>";
+        echo "<h2>Vencedor de la Carrera de Sepang</h2>";
         echo "<p>Piloto: {$xml->vencedor->nombrePiloto}</p>";
         echo "<p>Tiempo: " . $this->formatearTiempo($xml->vencedor->tiempoCarrera) . "</p>";
         echo "</section>";
 
         // Clasificacion Mundial
         echo "<section>";
-        echo "<h3>Clasificación Mundial</h3>";
+        echo "<h2>Clasificación Mundial</h2>";
         echo "<table>";
         echo "<caption>Clasificación del Mundial de MotoGP tras la carrera de Sepang</caption>";
         echo "<thead><tr><th scope='col' id='posicion'>Posición</th><th scope='col' id='piloto'>Piloto</th><th scope='col' id='puntos'>Puntos</th></tr></thead>";

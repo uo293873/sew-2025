@@ -1,21 +1,15 @@
 /* Alejandro Aldea Viana - UO293873 */
+/* Estilos de posicionamiento del proyecto MotoGP-Desktop*/
 
-/* === RESET Y BASE === */
 /* especificidad: 001 */
 body {
     margin: 0;
     padding: 0;
 }
 
-/* === ENCABEZADOS === */
-/* especificidad: 001 */
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-}
-
 /* especificidad: 001 */
 h1 {
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
 }
 
 /* especificidad: 001 */
@@ -30,24 +24,19 @@ h3 {
 }
 
 /* especificidad: 001 */
-h4 {
-    margin: 1rem 0 0.7rem;
-}
-
-/* === TEXTO === */
-/* especificidad: 001 */
 p {
     margin: 0 0 1rem;
     text-align: justify;
 }
 
-/* === LISTAS === */
 /* especificidad: 001 */
-ul, ol, dl {
+/* especificidad: 001 */
+ul, ol {
     margin: 1rem 0;
     padding-left: 2rem;
 }
 
+/* especificidad: 002 */
 /* especificidad: 002 */
 ul li, ol li {
     margin: 0.5rem 0;
@@ -66,6 +55,7 @@ ol li {
 }
 
 /* especificidad: 003 */
+/* especificidad: 003 */
 ul ul li, ol ol li {
     margin: 0.4rem 0;
 }
@@ -75,7 +65,6 @@ ul li a:hover {
     padding: 0.2em 0.4em;
 }
 
-/* === LISTAS DE DEFINICIÓN === */
 /* especificidad: 001 */
 dl {
     padding: 1.5rem;
@@ -84,9 +73,8 @@ dl {
     border-left: 0.25em solid #FF6600;
 }
 
-/* === MAPA DINÁMICO === */
 /* especificidad: 002 */
-section > div {
+section > div { /* regla del mapa -> lo agrupo dentro de una section por mayor control y organizacion */
     width: 100%;
     height: 30em;
     margin: 1em 0;
@@ -114,9 +102,9 @@ dd {
     border-left: 0.1875em solid rgba(255, 102, 0, 0.3);
 }
 
-/* === TABLAS === */
 /* especificidad: 001 */
 table {
+    width: 100%;
     margin: 1.5rem 0;
     max-width: 37.5em;
     border-radius: 0.75em;
@@ -142,8 +130,6 @@ th {
 /* especificidad: 001 */
 td {
     padding: 1.2rem 1rem;
-    border: none;
-    border-bottom: 0.0625em solid rgba(255, 102, 0, 0.2);
     width: 40%;
 }
 
@@ -157,7 +143,6 @@ main section table {
     margin: 2rem auto;
 }
 
-/* === LAYOUT === */
 /* especificidad: 001 */
 header {
     display: flex;
@@ -235,48 +220,112 @@ footer {
 
 /* especificidad: 002 */
 footer a {
-    display: inline-block;
     padding: 0.3em 0.6em;
     margin: 0.2em;
     border: 0.0625em solid #FF6600;
     border-radius: 0.3125em;
 }
 
-/* === MULTIMEDIA === */
 /* especificidad: 001 */
-video, audio {
-    width: 100%;
+video {
+    height: auto;
+    max-width: 60%;
+}
+
+/* especificidad: 001 */
+/* especificidad: 001 */
+/* especificidad: 001 */
+img, picture, svg {
+    max-width: 60%;
     height: auto;
 }
 
 /* especificidad: 001 */
 audio {
+    width: 100%;
     height: 2.5em;
+    max-width: 31.25em;
+}
+
+/* especificidad: 001 */
+fieldset {
+    padding: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+/* especificidad: 001 */
+legend {
+    padding: 0 0.5em;
+}
+
+/* especificidad: 002 */
+fieldset p {
+    padding: 0.75em 1em;
+    margin: 0 0 1em 0;
+}
+
+/* especificidad: 001 */
+label {
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+/* especificidad: 011 */
+label:first-of-type {
+    margin-top: 0;
+}
+
+/* especificidad: 011 */
+/* especificidad: 011 */
+/* especificidad: 011 */
+input[type="text"],
+input[type="number"],
+input[type="file"],
+/* especificidad: 001 */
+/* especificidad: 001 */
+select,
+textarea {
+    width: 100%;
+    padding: 0.75em 2.5em 0.75em 0.75em;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+/* especificidad: 001 */
+textarea {
+    min-height: 6em;
+}
+
+/* especificidad: 011 */
+/* especificidad: 011 */
+button[type="submit"],
+input[type="submit"] {
+    padding: 0.875em 2em;
+    margin: 1em 0.5em 0 0;
 }
 
 /* === MEDIA QUERIES === */
 @media screen and (max-width: 49.9375em) {
     /* especificidad: 001 */
     p {
-        text-align: left;
+        text-align: left; /* Advertencia del validador: redefinicion de text-align */
     }
     
     /* especificidad: 001 */
-    ul, ol, dl {
-        padding-left: 1.5rem;
+    /* especificidad: 001 */
+    ul, ol {
+        padding-left: 1.5rem; /* Advertencia del validador: redefinicion de padding-left */
     }
     
     /* especificidad: 001 */
     dd {
-        margin-left: 1.5rem;
+        margin-left: 1.5rem; /* Advertencia del validador: redefinicion de margin-left */
     }
     
     /* especificidad: 001 */
     header {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1em;
+        flex-direction: column; /* Advertencia del validador: redefinicion de flex-direction */
+        justify-content: center; /* Advertencia del validador: redefinicion de justify-content */
     }
     
     /* especificidad: 002 */
@@ -287,90 +336,93 @@ audio {
     /* especificidad: 001 */
     nav {
         flex-direction: column;
-        justify-content: center;
-        gap: 0.5em;
+        justify-content: center; /* Advertencia del validador: redefinicion de justify-content */
+        gap: 0.5em; /* Advertencia del validador: redefinicion de gap */
         width: 100%;
     }
     
     /* especificidad: 002 */
     nav a {
         width: 100%;
-        justify-content: center;
-        padding: 0.8em;
+        padding: 0.8em; /* Advertencia del validador: redefinicion de padding */
     }
     
     /* especificidad: 001 */
     main {
-        padding: 1em;
+        padding: 1em; /* Advertencia del validador: redefinicion de padding */
     }
     
     /* especificidad: 001 */
+    /* especificidad: 001 */
     section, aside {
-        padding: 0.8em;
-        margin: 0.8em 0;
+        padding: 0.8em; /* Advertencia del validador: redefinicion de padding */
+        margin: 0.8em 0; /* Advertencia del validador: redefinicion de margin */
     }
     
     /* especificidad: 001 */
     table {
-        margin: 1rem auto;
-        max-width: 100%;
+        margin: 1rem auto; /* Advertencia del validador: redefinicion de margin */
+        max-width: 100%; /* Advertencia del validador: redefinicion de max-width */
     }
     
     /* especificidad: 001 */
     caption {
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; /* Advertencia del validador: redefinicion de margin-bottom */
     }
     
     /* especificidad: 001 */
     th {
-        padding: 1rem 0.8rem;
-        width: 65%;
+        padding: 1rem 0.8rem; /* Advertencia del validador: redefinicion de padding */
+        width: 65%; /* Advertencia del validador: redefinicion de width */
     }
     
     /* especificidad: 001 */
     td {
-        padding: 1rem 0.8rem;
-        width: 35%;
+        padding: 1rem 0.8rem; /* Advertencia del validador: redefinicion de padding */
+        width: 35%; /* Advertencia del validador: redefinicion de width */
     }
 }
 
 @media screen and (max-width: 29.0625em) {
     /* especificidad: 001 */
+    /* especificidad: 001 */
+    /* especificidad: 001 */
     ul, ol, dl {
-        padding-left: 1rem;
+        padding-left: 1rem; /* Advertencia del validador: redefinicion de padding-left */
     }
     
     /* especificidad: 001 */
     dd {
-        margin-left: 1rem;
+        margin-left: 1rem; /* Advertencia del validador: redefinicion de margin-left */
     }
     
     /* especificidad: 001 */
     main {
-        padding: 0.8em;
+        padding: 0.8em; /* Advertencia del validador: redefinicion de padding */
     }
     
     /* especificidad: 001 */
+    /* especificidad: 001 */
     section, aside {
-        padding: 0.6em;
-        margin: 0.6em 0;
+        padding: 0.6em; /* Advertencia del validador: redefinicion de padding */
+        margin: 0.6em 0; /* Advertencia del validador: redefinicion de margin */
     }
     
     /* especificidad: 001 */
     header {
-        padding: 0.8em;
+        padding: 0.8em; /* Advertencia del validador: redefinicion de padding */
     }
     
     /* especificidad: 001 */
     th {
-        padding: 0.8rem 0.6rem;
-        width: 70%;
+        padding: 0.8rem 0.6rem; /* Advertencia del validador: redefinicion de padding */
+        width: 70%; /* Advertencia del validador: redefinicion de width */
     }
     
     /* especificidad: 001 */
     td {
-        padding: 0.8rem 0.6rem;
-        width: 30%;
+        padding: 0.8rem 0.6rem; /* Advertencia del validador: redefinicion de padding */
+        width: 30%; /* Advertencia del validador: redefinicion de width */
     }
 
     /* especificidad: 003 */
@@ -380,16 +432,17 @@ audio {
         max-width: 100%;
     }
 
+    /* especificidad: 001 */
+    /* especificidad: 001 */
+    /* especificidad: 001 */
     video, img, svg{
-        max-width: 100%;
+        max-width: 100%; /* Advertencia del validador: redefinicion de max-width */
         width:100%;
     }
 
     /* especificidad: 002 */
     section > div {
-        width: 100%;
-        height: 15em;
-        margin: 1em 0;
-        border-radius: 0;
+        height: 15em; /* Advertencia del validador: redefinicion de height */
+        border-radius: 0; /* Advertencia del validador: redefinicion de border-radius */
     }
 }

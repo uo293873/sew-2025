@@ -19,11 +19,15 @@ class Carrusel {
             data: {
                 tags: this.#busqueda,
                 tagmode: "all",
-                format: "json",
-                extras: "url_z"
+                format: "json"
             },
             success: (data) => {
+                for(let foto of data.items) {
+                    foto.url_z = foto.media.m.replace('_m.', '_z.');
+                    
+                }
                 this.#procesarJSONFotografias(data);
+                
             }
         });
     }
@@ -45,13 +49,13 @@ class Carrusel {
         if (fotos.length > 0) {
             const foto = fotos[this.#actual];
             
-            if (foto.media && foto.media.m) {
+            if (foto.url_z) {
                 const $articulo = $('<article></article>');
                 
                 const $h2 = $('<h2></h2>').text('Imágenes del circuito de Sepang');
                 
                 const $img = $('<img>')
-                    .attr('src', foto.media.m)
+                    .attr('src', foto.url_z)
                     .attr('alt', foto.title);
                 
                 $articulo.append($h2);
@@ -72,9 +76,9 @@ class Carrusel {
         
         const foto = fotos[this.#actual];
         
-        if (foto.media && foto.media.m) {
+        if (foto.url_z) {
             $('main article img')
-                .attr('src', foto.media.m)
+                .attr('src', foto.url_z)
                 .attr('alt', foto.title);
         }
     }

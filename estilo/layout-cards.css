@@ -12,6 +12,7 @@ main {
 }
 
 /* especificidad: 002 */
+/* especificidad: 002 */
 main h2, main p {
     grid-column: 1 / 5;
     text-align: center;
@@ -19,28 +20,72 @@ main h2, main p {
     padding: 0.5em 0;
 }
 
-/* Media Query para pantallas pequeñas (móviles) - Grid 2x6 */
+/* especificidad: 002 */
+main article {
+    width: 20vw;
+    height: 20em;
+    position: relative;
+    transform: scale(1);
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+/* especificidad: 012 */
+main article[data-estado="volteada"],
+main article[data-estado="revelada"] {
+    transform: rotateY(180deg);
+}
+
+/* especificidad: 003 */
+/* especificidad: 003 */
+main article h3,
+main article img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/* especificidad: 003 */
+main article h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* especificidad: 003 */
+main article img {
+    transform: rotateY(180deg);
+}
+
+/* Media Query para moviles - Grid 2x6 */
 @media screen and (max-width: 29.9375em) {
     /* especificidad: 001 */
     main {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1em;
-        padding: 0.5em 2vw;
-        height: 98vh;
+        grid-template-columns: repeat(2, 1fr); /* Redefinición de grid-template-columns */
+        gap: 1em; /* Redefinición de gap */
+        padding: 0.5em 2vw; /* Redefinición de padding */
+        height: 98vh; /* Redefinición de height */
     }
 
+    /* especificidad: 002 */
     main article {
-        width: 100%;
-        height: 10em;
+        width: 100%; /* Redefinición de width */
+        height: 10em; /* Redefinición de height */
     }
 
+    /* especificidad: 003 */
     main article h3{
         font-size: 1em;
     }
     
     /* especificidad: 002 */
     main h2, main p {
-        grid-column: 1 / 3;
-        padding: 0.3em 0;
+        grid-column: 1 / 3; /* Redefinición de grid-column */
+        padding: 0.3em 0; /* Redefinición de padding */
     }
 }
