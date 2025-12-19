@@ -240,6 +240,11 @@ img, picture, svg {
     height: auto;
 }
 
+/* especificidad: 002 - Carrusel centrado */
+main > article {
+    text-align: center;
+}
+
 /* especificidad: 001 */
 audio {
     width: 100%;
@@ -380,6 +385,11 @@ input[type="submit"] {
     td {
         padding: 0.6rem 0.4rem; /* Advertencia del validador: redefinicion de padding */
         width: auto; /* Advertencia del validador: redefinicion de width */
+    }
+    
+    /* especificidad: 003 - Carrusel ocupa todo en móviles */
+    main > article img {
+        max-width: 100%; /* Advertencia del validador: redefinicion de max-width */
     }
 }
 
