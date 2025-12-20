@@ -215,6 +215,10 @@ class Ciudad {
             let fecha2 = '';
             let fecha3 = '';
             
+            let idx1 = 0;
+            let idx2 = 0;
+            let idx3 = 0;
+            
             for (let i = 0; i < datos.hourly.time.length; i++) {
                 const tiempo = datos.hourly.time[i];
                 const fecha = tiempo.split('T')[0];
@@ -224,26 +228,29 @@ class Ciudad {
                 }
                 
                 if (fecha === fecha1) {
-                    dia1Temp.push(datos.hourly.temperature_2m[i]);
-                    dia1Lluvia.push(datos.hourly.precipitation[i]);
-                    dia1Viento.push(datos.hourly.wind_speed_10m[i]);
-                    dia1Humedad.push(datos.hourly.relative_humidity_2m[i]);
+                    dia1Temp[idx1] = datos.hourly.temperature_2m[i];
+                    dia1Lluvia[idx1] = datos.hourly.precipitation[i];
+                    dia1Viento[idx1] = datos.hourly.wind_speed_10m[i];
+                    dia1Humedad[idx1] = datos.hourly.relative_humidity_2m[i];
+                    idx1++;
                 } else if (fecha2 === '' || fecha === fecha2) {
                     if (fecha2 === '') {
                         fecha2 = fecha;
                     }
-                    dia2Temp.push(datos.hourly.temperature_2m[i]);
-                    dia2Lluvia.push(datos.hourly.precipitation[i]);
-                    dia2Viento.push(datos.hourly.wind_speed_10m[i]);
-                    dia2Humedad.push(datos.hourly.relative_humidity_2m[i]);
+                    dia2Temp[idx2] = datos.hourly.temperature_2m[i];
+                    dia2Lluvia[idx2] = datos.hourly.precipitation[i];
+                    dia2Viento[idx2] = datos.hourly.wind_speed_10m[i];
+                    dia2Humedad[idx2] = datos.hourly.relative_humidity_2m[i];
+                    idx2++;
                 } else {
                     if (fecha3 === '') {
                         fecha3 = fecha;
                     }
-                    dia3Temp.push(datos.hourly.temperature_2m[i]);
-                    dia3Lluvia.push(datos.hourly.precipitation[i]);
-                    dia3Viento.push(datos.hourly.wind_speed_10m[i]);
-                    dia3Humedad.push(datos.hourly.relative_humidity_2m[i]);
+                    dia3Temp[idx3] = datos.hourly.temperature_2m[i];
+                    dia3Lluvia[idx3] = datos.hourly.precipitation[i];
+                    dia3Viento[idx3] = datos.hourly.wind_speed_10m[i];
+                    dia3Humedad[idx3] = datos.hourly.relative_humidity_2m[i];
+                    idx3++;
                 }
             }
             
@@ -316,7 +323,6 @@ class Ciudad {
     }
 
     #formatearHora(fechaISO) {
-        // Convertir formato ISO 8601 a solo hora HH:MM
         const fecha = new Date(fechaISO);
         const horas = ('0' + fecha.getHours()).slice(-2);
         const minutos = ('0' + fecha.getMinutes()).slice(-2);
